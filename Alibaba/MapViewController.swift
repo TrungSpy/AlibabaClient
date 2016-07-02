@@ -24,7 +24,6 @@ class MKPointAnnotationWithType: MKPointAnnotation {
 
 class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     
-    @IBOutlet weak var destSearchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     
     var destLocation = CLLocationCoordinate2D()
@@ -43,7 +42,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         }
         
         mapView.delegate = self
-        destSearchBar.delegate = self
         
 //        InvitationManager.shared.get {
 //            invitations in
@@ -99,29 +97,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         userLocAnnotation.coordinate = userLocation
         userLocAnnotation.title = "location"
         mapView.addAnnotation(userLocAnnotation)
-    }
-    
-    // --------
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        // キーボードを隠す
-        destSearchBar.resignFirstResponder()
-        
-        // 目的地の文字列から座標検索
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(destSearchBar.text ?? "", completionHandler: {
-            (placemarks: [CLPlacemark]?, error: NSError?)  in
-            guard let placemark = placemarks?[0] else { return }
-            guard let location  = placemark.location else { return }
-            // 目的地の座標を取得
-            self.destLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-            // 目的地にピンを立てる
-            self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
-            // 現在地の取得を開始
-//            self.locationManager.startUpdatingLocation()
-            
-            self.getRoute()
-        })
     }
     
     func getRoute()
