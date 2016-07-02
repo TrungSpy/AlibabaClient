@@ -54,7 +54,7 @@ class InviteViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > 0 {
+        if scrollView.contentOffset.y != 0 {
             scrollView.setContentOffset(
                 CGPointMake(scrollView.contentOffset.x, 0)
                 , animated: false)
