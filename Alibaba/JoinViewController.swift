@@ -60,17 +60,6 @@ class JoinViewController: UIViewController {
             
         }
         
-        let raderSize = raderView.frame.size
-        let center = CGPointMake(raderSize.width / 2, raderSize.height / 2)
-        
-        for (invitation, view) in zip(invitations, inviteViews) {
-            let lat = invitation.lat - Double(userLocation.coordinate.latitude)
-            let lon = invitation.lon - Double(userLocation.coordinate.longitude)
-            let (x, y) = coord2Point(lat, lon)
-            
-            view.center.x = center.x + x
-            view.center.y = center.y + y
-        }
     }
     
     func coord2Point(lat: Double, _ lon: Double) -> (CGFloat, CGFloat) {
@@ -105,6 +94,18 @@ class JoinViewController: UIViewController {
     }
     
     func animateRaderView() {
+        let raderSize = raderView.frame.size
+        let center = CGPointMake(raderSize.width / 2, raderSize.height / 2)
+        
+        for (invitation, view) in zip(invitations, inviteViews) {
+            let lat = invitation.lat - Double(userLocation.coordinate.latitude)
+            let lon = invitation.lon - Double(userLocation.coordinate.longitude)
+            let (x, y) = coord2Point(lat, lon)
+            
+            view.center.x = center.x + x
+            view.center.y = center.y + y
+        }
+        
         let heading = currentHeading
         raderView.transform = CGAffineTransformMakeRotation(
             CGFloat(-heading.magneticHeading / 180.0 * M_PI)
