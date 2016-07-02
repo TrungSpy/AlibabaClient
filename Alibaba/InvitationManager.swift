@@ -69,5 +69,9 @@ struct Invitation {
     var limit: Int?
     var created_at: String
     var updated_at: String
+    
+    static func mock() -> Invitation {
+        return Invitation(id: 0, category: "", status: "", lon: 0, lat: 0, limit: nil, created_at: "", updated_at: "")
+    }
 }
 

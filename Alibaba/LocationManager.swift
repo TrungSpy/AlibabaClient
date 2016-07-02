@@ -15,6 +15,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     var locationCallbacks: [((manager: CLLocationManager, locations: [CLLocation]) -> Void)] = []
     var headingCallbacks: [((manager: CLLocationManager, heading: CLHeading) -> Void)] = []
     
+    var currentLocation = CLLocation()
+    
     override init() {
         super.init()
         
@@ -45,6 +47,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation = manager.location ?? CLLocation()
         for callback in locationCallbacks {
             callback(manager: manager, locations: locations)
         }

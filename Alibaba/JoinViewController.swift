@@ -54,11 +54,15 @@ class JoinViewController: UIViewController {
             inviteViews.append(view)
             view.tapAction = {
                 [weak self] in
-                self?.performSegueWithIdentifier("map", sender: nil)
-                print("helloo")
+                let index = self?.inviteViews.indexOf(view) ?? 0
+                self?.goToMap(self?.invitations[index] ?? Invitation.mock())
             }
         }
-        
+    }
+    
+    func goToMap(invitation: Invitation) {
+        JoinManager.shared.invitation = invitation
+        performSegueWithIdentifier("map", sender: nil)
     }
     
     func coord2Point(lat: Double, _ lon: Double) -> (CGFloat, CGFloat) {

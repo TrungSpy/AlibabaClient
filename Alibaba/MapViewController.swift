@@ -42,34 +42,50 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
             self?.locationManager(manager, didUpdateLocations: locations)
         }
         
-        
         mapView.delegate = self
         destSearchBar.delegate = self
         
-        InvitationManager.shared.get {
-            invitations in
-            
-            print(invitations)
-            
-            self.mapView.removeAnnotations(self.invitationLocAnnotations)
-            
-            self.invitationLocAnnotations = invitations.map {
-                invitation in
-                let annotation = MKPointAnnotationWithType(type: .Invitation)
-                annotation.coordinate = CLLocationCoordinate2DMake(
-                    CLLocationDegrees(invitation.lat),
-                    CLLocationDegrees(invitation.lon))
-                annotation.title = "invitation"
-                return annotation
-            }
-            
-            self.mapView.addAnnotations(self.invitationLocAnnotations)
-        }
+//        InvitationManager.shared.get {
+//            invitations in
+//            
+//            print(invitations)
+//            
+//            self.mapView.removeAnnotations(self.invitationLocAnnotations)
+//            
+//            self.invitationLocAnnotations = invitations.map {
+//                invitation in
+//                let annotation = MKPointAnnotationWithType(type: .Invitation)
+//                annotation.coordinate = CLLocationCoordinate2DMake(
+//                    CLLocationDegrees(invitation.lat),
+//                    CLLocationDegrees(invitation.lon))
+//                annotation.title = "invitation"
+//                return annotation
+//            }
+//            
+//            self.mapView.addAnnotations(self.invitationLocAnnotations)
+//        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let invitation = JoinManager.shared.invitation
+        
+        let location = CLLocation(
+            latitude: CLLocationDegrees(invitation.lat),
+            longitude: invitation.lon)
+        
+        let placemark = MKPlacemark(coordinate: location.coordinate, addressDictionary: nil)
+        
+        self.userLocation = LocationManager.shared.currentLocation.coordinate
+        // 目的地の座標を取得
+        self.destLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        // 目的地にピンを立てる
+        self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
+        getRoute()
     }
     
     // MARK: - Delegate

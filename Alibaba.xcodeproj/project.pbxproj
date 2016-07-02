@@ -22,6 +22,7 @@
 		37F1EB2C1D27F56A003C8861 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB2B1D27F56A003C8861 /* LocationManager.swift */; };
 		37F1EB301D280173003C8861 /* JoinRaderInviteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB2F1D280173003C8861 /* JoinRaderInviteView.swift */; };
 		37F1EB321D2801AB003C8861 /* JoinRaderInviteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37F1EB311D2801AB003C8861 /* JoinRaderInviteView.xib */; };
+		37F1EB341D282452003C8861 /* JoinManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB331D282452003C8861 /* JoinManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		37F1EB2B1D27F56A003C8861 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		37F1EB2F1D280173003C8861 /* JoinRaderInviteView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinRaderInviteView.swift; sourceTree = "<group>"; };
 		37F1EB311D2801AB003C8861 /* JoinRaderInviteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JoinRaderInviteView.xib; sourceTree = "<group>"; };
+		37F1EB331D282452003C8861 /* JoinManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinManager.swift; sourceTree = "<group>"; };
 		7193E27D01140F41429EAE03 /* Pods-Alibaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alibaba.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alibaba/Pods-Alibaba.release.xcconfig"; sourceTree = "<group>"; };
 		A38873037BDD038EB8B0114E /* Pods_Alibaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alibaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB0D5C210FD6901A863E9E6 /* Pods-Alibaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alibaba.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alibaba/Pods-Alibaba.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				373547451D27C8BD00ABE81B /* InvitationManager.swift */,
 				37F1EB2B1D27F56A003C8861 /* LocationManager.swift */,
+				37F1EB331D282452003C8861 /* JoinManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				37F1EB301D280173003C8861 /* JoinRaderInviteView.swift in Sources */,
 				37F1EB241D27F335003C8861 /* SelectViewController.swift in Sources */,
 				37F1EB281D27F35B003C8861 /* MeetViewController.swift in Sources */,
+				37F1EB341D282452003C8861 /* JoinManager.swift in Sources */,
 				37F1EB201D27F31B003C8861 /* InviteViewController.swift in Sources */,
 				37F1EB261D27F340003C8861 /* JoinViewController.swift in Sources */,
 				37F1EB2C1D27F56A003C8861 /* LocationManager.swift in Sources */,
