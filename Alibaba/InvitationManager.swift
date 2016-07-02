@@ -7,37 +7,67 @@
 //
 
 import UIKit
+import SwiftyJSON
+import Alamofire
 
 class InvitationManager: NSObject {
-    
-    
-    private var json = NSArray()
-    
-    func getJson() {
-        
-        let URL: NSURL = NSURL(string: "http://10.201.120.98:3000/invites")!
-        guard let jsonData :NSData = NSData(contentsOfURL: URL) else {
-            
-            return
+    func get(complition: ((invitations: [Invitation]) -> Void)) {
+        Alamofire.request(.GET, "http://10.201.120.98:3000/invites")
+            .responseJSON {
+                response in
+                guard let object = response.result.value else {
+                    NSLog("failed to get JSON from server...")
+                    return
+                }
+                let json = JSON(object)
+                
+                let invitations: [Invitation] = (json.array ?? []).map { elem in
+                    return Invitation(
+                        id: elem["id"].int!,
+                        category: elem["category"].string!,
+                        status: elem["status"].string!,
+                        lon: elem["lon"].float!,
+                        lat: elem["lat"].float!,
+                        limit: elem["limit"].int,
+                        created_at: elem["created_at"].string!,
+                        updated_at: elem["updated_at"].string!
+                    )
+                }
+                
+                complition(invitations: invitations)
         }
-        
-        do {
-            json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableContainers) as! NSArray
-        } catch  {
-            // エラー処理
-        }
-        
-        print(json)
-        
-//        let response:NSDictionary = json.objectForKey("response") as! NSDictionary
-//        let station:NSArray = response.objectForKey("station") as! NSArray
-//        
-//        
-//        for i in 0 ..< station.count {
-//            print(station[i].objectForKey("prefecture") as! NSString)
-//        }
     }
-
-
+    
+//            "hoge"
+//            "category" : "karaoke",
+//            "status" : "inviting",
+//            "id" : 6,
+//            "created_at" : "2016-07-02T08:42:53.283Z",
+//            "lon" : 139.6957584,
+//            "limit" : null,
+//            "lat" : 35.6583386,
+//            "updated_at" : "2016-07-02T08:42:53.283Z"
+//    }
+    
     static let shared = InvitationManager()
 }
+
+struct Invitation {
+//    enum Categoy {
+//        case Beer, Karaoke
+//    }
+//    
+//    enum Status {
+//        case Inviting
+//    }
+//    
+    var id: Int
+    var category: String
+    var status: String
+    var lon: Float
+    var lat: Float
+    var limit: Int?
+    var created_at: String
+    var updated_at: String
+}
+

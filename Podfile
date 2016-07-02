@@ -4,6 +4,7 @@
 use_frameworks!
 
 target 'Alibaba' do
-  pod 'FlatUIKit'
+    pod 'Alamofire'
+    pod 'FlatUIKit'
+    pod 'SwiftyJSON'
 end
-

@@ -11,6 +11,18 @@ import FlatUIKit
 import CoreLocation
 import MapKit
 
+class MKPointAnnotationWithType: MKPointAnnotation {
+    enum Type {
+        case User, Invitation, Goal
+    }
+    var type: Type
+    
+    init(type: Type) {
+        self.type = type
+        super.init()
+    }
+}
+
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate {
     
     let locationManager = CLLocationManager()
@@ -20,6 +32,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var destLocation = CLLocationCoordinate2D()
     var userLocation = CLLocationCoordinate2D()
     var userLocAnnotation = MKPointAnnotation()
+    
+    var invitationLocAnnotations = [MKPointAnnotation]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +47,25 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         locationManager.requestAlwaysAuthorization()
         
-        InvitationManager.shared.getJson()
+        InvitationManager.shared.get {
+            invitations in
+            
+            print(invitations)
+            
+            self.mapView.removeAnnotations(self.invitationLocAnnotations)
+            
+            self.invitationLocAnnotations = invitations.map {
+                invitation in
+                let annotation = MKPointAnnotationWithType(type: .Invitation)
+                annotation.coordinate = CLLocationCoordinate2DMake(
+                    CLLocationDegrees(invitation.lat),
+                    CLLocationDegrees(invitation.lon))
+                annotation.title = "invitation"
+                return annotation
+            }
+            
+            self.mapView.addAnnotations(self.invitationLocAnnotations)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -68,9 +100,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         mapView.removeAnnotation(userLocAnnotation)
         
-        userLocAnnotation = MKPointAnnotation()
+        userLocAnnotation = MKPointAnnotationWithType(type: .User)
         userLocAnnotation.coordinate = userLocation
-        userLocAnnotation.title = "現在地"
+        userLocAnnotation.title = "location"
         mapView.addAnnotation(userLocAnnotation)
     }
     
@@ -170,6 +202,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             polylineRenderer.lineWidth = 5
         }
         return polylineRenderer
+    }
+    
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        let view = (mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as? MKPinAnnotationView) ??
+            MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+        view.pinTintColor = UIColor.peterRiverColor()
+        return view
     }
     
     /*
