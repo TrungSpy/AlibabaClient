@@ -19,6 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     var destLocation = CLLocationCoordinate2D()
     var userLocation = CLLocationCoordinate2D()
+    var userLocAnnotation = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         userLocation = CLLocationCoordinate2DMake(manager.location!.coordinate.latitude, manager.location!.coordinate.longitude)
         
-        let userLocAnnotation: MKPointAnnotation = MKPointAnnotation()
+        mapView.removeAnnotation(userLocAnnotation)
+        
+        userLocAnnotation = MKPointAnnotation()
         userLocAnnotation.coordinate = userLocation
         userLocAnnotation.title = "現在地"
         mapView.addAnnotation(userLocAnnotation)
