@@ -17,7 +17,7 @@ class JoinViewController: UIViewController {
     var invitations = [Invitation]()
     
     var prevHeadingDate = NSDate()
-    let headingInterval: NSTimeInterval = 0.5
+    let headingInterval: NSTimeInterval = 0.3
     var currentHeading: CLHeading?
     var headingTimer = NSTimer()
     
@@ -92,7 +92,7 @@ class JoinViewController: UIViewController {
     }
     
     func animateRaderView() {
-        let raderSize = raderView.frame.size
+        let raderSize = raderView.bounds.size
         let center = CGPointMake(raderSize.width / 2, raderSize.height / 2)
         
         for (invitation, view) in zip(invitations, inviteViews) {
