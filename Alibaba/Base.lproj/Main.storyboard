@@ -111,13 +111,15 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-ZR-Fna">
                                 <rect key="frame" x="166" y="584" width="43" height="30"/>
                                 <state key="normal" title="BOND"/>
+                                <connections>
+                                    <segue destination="qsr-tP-Bcx" kind="show" identifier="wait" id="do0-Qk-Znw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="oha-SH-QFB" id="uYQ-bA-Wes"/>
-                        <segue destination="qsr-tP-Bcx" kind="show" id="655-K3-6vi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKN-O8-2I4" userLabel="First Responder" sceneMemberID="firstResponder"/>

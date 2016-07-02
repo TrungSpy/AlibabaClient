@@ -38,16 +38,9 @@ class InvitationManager: NSObject {
         }
     }
     
-//            "hoge"
-//            "category" : "karaoke",
-//            "status" : "inviting",
-//            "id" : 6,
-//            "created_at" : "2016-07-02T08:42:53.283Z",
-//            "lon" : 139.6957584,
-//            "limit" : null,
-//            "lat" : 35.6583386,
-//            "updated_at" : "2016-07-02T08:42:53.283Z"
-//    }
+    func create() {
+        
+    }
     
     static let shared = InvitationManager()
 }
@@ -63,15 +56,6 @@ struct Invitation {
         "test",
         ]
     
-    
-//    enum Categoy {
-//        case Beer, Karaoke
-//    }
-//    
-//    enum Status {
-//        case Inviting
-//    }
-//    
     var id: Int
     var category: String
     var status: String
