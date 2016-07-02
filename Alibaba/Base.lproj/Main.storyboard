@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g5X-Kr-tUD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -68,9 +68,21 @@
                     <view key="view" contentMode="scaleToFill" id="N4e-gh-4Lw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
+                                <rect key="frame" x="67" y="211" width="240" height="246"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo001" translatesAutoresizingMaskIntoConstraints="NO" id="WhS-vj-WNx">
+                                        <rect key="frame" x="0.0" y="8" width="240" height="238"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="raderView" destination="eOi-tq-vLl" id="anb-T9-V1G"/>
                         <segue destination="BYZ-38-t0r" kind="show" id="aW2-yO-yoZ"/>
                     </connections>
                 </viewController>
@@ -181,4 +193,7 @@
             <point key="canvasLocation" x="1306.5" y="252.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo001" width="381" height="381"/>
+    </resources>
 </document>

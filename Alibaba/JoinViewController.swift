@@ -10,10 +10,18 @@ import UIKit
 
 class JoinViewController: UIViewController {
     
+    @IBOutlet weak var raderView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        LocationManager.shared.headingCallbacks.append {
+            [weak self] manager, heading in
+            print(heading)
+            self?.raderView.transform = CGAffineTransformMakeRotation(
+                CGFloat(-heading.magneticHeading / 180.0 * M_PI)
+            )
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {

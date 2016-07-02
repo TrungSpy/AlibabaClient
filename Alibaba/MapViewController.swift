@@ -37,7 +37,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        LocationManager.shared.callbacks.append {
+        LocationManager.shared.locationCallbacks.append {
             [weak self] manager, locations in
             self?.locationManager(manager, didUpdateLocations: locations)
         }

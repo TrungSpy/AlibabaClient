@@ -12,7 +12,8 @@ import CoreLocation
 class LocationManager: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     
-    var callbacks: [((manager: CLLocationManager, locations: [CLLocation]) -> Void)] = []
+    var locationCallbacks: [((manager: CLLocationManager, locations: [CLLocation]) -> Void)] = []
+    var headingCallbacks: [((manager: CLLocationManager, heading: CLHeading) -> Void)] = []
     
     override init() {
         super.init()
@@ -40,11 +41,18 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
         }
         
         manager.startUpdatingLocation()
+        manager.startUpdatingHeading()
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        for callback in callbacks {
+        for callback in locationCallbacks {
             callback(manager: manager, locations: locations)
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+        for callback in headingCallbacks {
+            callback(manager: manager, heading: newHeading)
         }
     }
     
