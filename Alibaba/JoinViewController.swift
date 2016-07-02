@@ -52,11 +52,6 @@ class JoinViewController: UIViewController {
             let view = JoinRaderInviteView.instance()
             raderView.addSubview(view)
             inviteViews.append(view)
-            view.tapAction = {
-                [weak self] in
-                let index = self?.inviteViews.indexOf(view) ?? 0
-                self?.goToMap(self?.invitations[index] ?? Invitation.mock())
-            }
         }
     }
     
@@ -118,6 +113,29 @@ class JoinViewController: UIViewController {
             view.transform = CGAffineTransformMakeRotation(
                 CGFloat(heading.magneticHeading / 180.0 * M_PI)
             )
+        }
+    }
+    
+    // 究極のタップのしやすさのために体を張る
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let pos = touch.locationInView(raderView)
+        
+        func dist(a: CGPoint, _ b: CGPoint) -> CGFloat {
+            return sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2))
+        }
+        
+        guard let nearest = inviteViews.minElement({
+            a, b in
+            dist(a.center, pos) < dist(b.center, pos)
+        }) else { return }
+        
+        let th: CGFloat = 50
+        
+        if dist(nearest.center, pos) < th {
+            guard let index = inviteViews.indexOf(nearest) else { return }
+            let invitation = invitations[index]
+            goToMap(invitation)
         }
     }
 

@@ -112,6 +112,7 @@
 		37F1EB1E1D27F298003C8861 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37F1EB351D28302A003C8861 /* InviteViewSub */,
 				37F1EB2E1D280137003C8861 /* JoinViewSub */,
 				373547431D27B2F500ABE81B /* MapViewController.swift */,
 				37F1EB1F1D27F31B003C8861 /* InviteViewController.swift */,
@@ -140,6 +141,13 @@
 				37F1EB311D2801AB003C8861 /* JoinRaderInviteView.xib */,
 			);
 			name = JoinViewSub;
+			sourceTree = "<group>";
+		};
+		37F1EB351D28302A003C8861 /* InviteViewSub */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = InviteViewSub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
