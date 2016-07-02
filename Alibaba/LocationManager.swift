@@ -12,7 +12,7 @@ import CoreLocation
 class LocationManager: NSObject, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     
-    var callbacks: [([CLLocation] -> Void)] = []
+    var callbacks: [((manager: CLLocationManager, locations: [CLLocation]) -> Void)] = []
     
     override init() {
         super.init()
@@ -44,7 +44,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for callback in callbacks {
-            callback(locations)
+            callback(manager: manager, locations: locations)
         }
     }
     
@@ -52,4 +52,8 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         NSLog("locationManager error")
     }
+    
+    // ------
+    
+    static let shared = LocationManager()
 }

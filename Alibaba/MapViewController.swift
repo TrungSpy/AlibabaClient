@@ -8,7 +8,6 @@
 
 import UIKit
 import FlatUIKit
-import CoreLocation
 import MapKit
 
 class MKPointAnnotationWithType: MKPointAnnotation {
@@ -23,9 +22,8 @@ class MKPointAnnotationWithType: MKPointAnnotation {
     }
 }
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
     
-    let locationManager = CLLocationManager()
     @IBOutlet weak var destSearchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     
@@ -37,15 +35,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.alizarinColor()
-        
         // Do any additional setup after loading the view.
         
-        locationManager.delegate = self
+        LocationManager.shared.callbacks.append {
+            [weak self] manager, locations in
+            self?.locationManager(manager, didUpdateLocations: locations)
+        }
+        
+        
         mapView.delegate = self
         destSearchBar.delegate = self
-        
-        locationManager.requestAlwaysAuthorization()
         
         InvitationManager.shared.get {
             invitations in
@@ -74,26 +73,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     // MARK: - Delegate
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        switch status {
-//        case .NotDetermined:
-//            return
-//        case .Restricted:
-//            return
-        case .Denied:
-            return
-        case .AuthorizedAlways:
-            break
-        case .AuthorizedWhenInUse:
-            break
-        default:
-            break
-        }
-        
-        manager.startUpdatingLocation()
-    }
-    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         userLocation = CLLocationCoordinate2DMake(manager.location!.coordinate.latitude, manager.location!.coordinate.longitude)
@@ -104,11 +83,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         userLocAnnotation.coordinate = userLocation
         userLocAnnotation.title = "location"
         mapView.addAnnotation(userLocAnnotation)
-    }
-    
-    // 位置情報取得に失敗した時に呼び出されるデリゲート.
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("locationManager error")
     }
     
     // --------
