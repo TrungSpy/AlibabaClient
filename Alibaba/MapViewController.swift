@@ -32,6 +32,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         destSearchBar.delegate = self
         
         locationManager.requestAlwaysAuthorization()
+        
+        InvitationManager.shared.getJson()
     }
     
     override func didReceiveMemoryWarning() {
