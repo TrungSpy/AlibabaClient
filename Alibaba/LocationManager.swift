@@ -40,7 +40,7 @@ class LocationManager: NSObject, CLLocationManagerDelegate {
             break
         }
         
-        manager.startUpdatingHeading()
+        manager.startUpdatingLocation()
         manager.startUpdatingHeading()
     }
     

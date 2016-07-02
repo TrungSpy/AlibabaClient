@@ -26,8 +26,8 @@ class InvitationManager: NSObject {
                         id: elem["id"].int!,
                         category: elem["category"].string!,
                         status: elem["status"].string!,
-                        lon: elem["lon"].float!,
-                        lat: elem["lat"].float!,
+                        lon: elem["lon"].double!,
+                        lat: elem["lat"].double!,
                         limit: elem["limit"].int,
                         created_at: elem["created_at"].string!,
                         updated_at: elem["updated_at"].string!
@@ -64,8 +64,8 @@ struct Invitation {
     var id: Int
     var category: String
     var status: String
-    var lon: Float
-    var lat: Float
+    var lon: Double
+    var lat: Double
     var limit: Int?
     var created_at: String
     var updated_at: String

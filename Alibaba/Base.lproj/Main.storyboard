@@ -70,13 +70,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg001" translatesAutoresizingMaskIntoConstraints="NO" id="W71-FT-XqN">
-                                <rect key="frame" x="67" y="219" width="240" height="238"/>
+                                <rect key="frame" x="67" y="215" width="240" height="238"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
-                                <rect key="frame" x="67" y="219" width="240" height="238"/>
+                                <rect key="frame" x="0.0" y="130" width="375" height="375"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo002" translatesAutoresizingMaskIntoConstraints="NO" id="WhS-vj-WNx">
-                                        <rect key="frame" x="0.0" y="0.0" width="240" height="238"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo002" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-X4-OO5">
+                                        <rect key="frame" x="87" y="88" width="200" height="200"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -86,7 +86,7 @@
                     </view>
                     <connections>
                         <outlet property="raderView" destination="eOi-tq-vLl" id="anb-T9-V1G"/>
-                        <segue destination="BYZ-38-t0r" kind="show" id="aW2-yO-yoZ"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="map" id="aW2-yO-yoZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iFA-SA-LHz" userLabel="First Responder" sceneMemberID="firstResponder"/>

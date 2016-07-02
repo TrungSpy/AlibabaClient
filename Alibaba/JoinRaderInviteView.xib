@@ -14,8 +14,15 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="Oxt-F3-avt">
                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wv-ZY-R7p">
+                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                    <connections>
+                        <action selector="tapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wsw-ZQ-ZEM"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="110" y="41"/>
         </view>
