@@ -64,7 +64,7 @@ class JoinViewController: UIViewController {
     }
     
     func goToMap(invitation: Invitation) {
-        JoinManager.shared.invitation = invitation
+        JoinManager.currentInvitation = invitation
         performSegueWithIdentifier("map", sender: nil)
     }
     

@@ -1,5 +1,5 @@
 //
-//  JoinManager.swift
+//  ServerManager.swift
 //  Alibaba
 //
 //  Created by 村上晋太郎 on 2016/07/03.
@@ -8,7 +8,6 @@
 
 import UIKit
 
-class JoinManager: NSObject {
-    static var currentInvitation = Invitation.mock()
-    static let shared = JoinManager()
+class ServerManager: NSObject {
+    static let host = "10.201.120.98:3000"
 }

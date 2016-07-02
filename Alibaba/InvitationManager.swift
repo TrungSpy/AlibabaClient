@@ -11,7 +11,9 @@ import SwiftyJSON
 import Alamofire
 
 class InvitationManager: NSObject {
-    let host = "10.201.120.98:3000"
+    let host = ServerManager.host
+    
+    static var currentInvitation = Invitation.mock()
     
     func search(radius: Double, lat: Double, lon: Double, complition: ((invitations: [Invitation]) -> Void)) {
         Alamofire.request(
@@ -31,23 +33,14 @@ class InvitationManager: NSObject {
                 let json = JSON(object)
                 
                 let invitations: [Invitation] = (json.array ?? []).map { elem in
-                    return Invitation(
-                        id: elem["id"].int!,
-                        category: elem["category"].string!,
-                        status: elem["status"].string!,
-                        lon: elem["lon"].double!,
-                        lat: elem["lat"].double!,
-                        limit: elem["limit"].int,
-                        created_at: elem["created_at"].string!,
-                        updated_at: elem["updated_at"].string!
-                    )
+                    return self.invitationWithJSON(elem)
                 }
                 
                 complition(invitations: invitations)
         }
     }
     
-    func create(category: String, lat: Double, lon: Double, complition: (() -> Void)? = nil) {
+    func create(category: String, lat: Double, lon: Double, completion completionOrNil: ((Invitation) -> Void)? = nil) {
         Alamofire.request(
             .POST,
             "http://\(host)/invite",
@@ -56,11 +49,31 @@ class InvitationManager: NSObject {
                 "lat": lat,
                 "lon": lon
             ]).responseJSON {
-                _ in
-                if let c = complition {
-                    complition
+                response in
+                guard let object = response.result.value else {
+                    NSLog("failed to get JSON from server...")
+                    return
+                }
+                
+                let json = JSON(object)
+                
+                if let completion = completionOrNil {
+                    completion(self.invitationWithJSON(json))
                 }
         }
+    }
+    
+    func invitationWithJSON(json: JSON) -> Invitation {
+        return Invitation(
+            id: json["id"].int!,
+            category: json["category"].string!,
+            status: json["status"].string!,
+            lon: json["lon"].double!,
+            lat: json["lat"].double!,
+            limit: json["limit"].int,
+            created_at: json["created_at"].string!,
+            updated_at: json["updated_at"].string!
+        )
     }
     
     static let shared = InvitationManager()

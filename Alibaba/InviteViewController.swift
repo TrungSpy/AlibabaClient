@@ -73,7 +73,10 @@ class InviteViewController: UIViewController, UIScrollViewDelegate {
         
         print((category, lat, lon))
         
-        InvitationManager.shared.create(category, lat: lat, lon: lon)
+        InvitationManager.shared.create(category, lat: lat, lon: lon) {
+            invitation in
+            
+        }
     }
 
 }

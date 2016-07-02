@@ -1,5 +1,5 @@
 //
-//  JoinManager.swift
+//  RoomManager.swift
 //  Alibaba
 //
 //  Created by 村上晋太郎 on 2016/07/03.
@@ -8,7 +8,11 @@
 
 import UIKit
 
-class JoinManager: NSObject {
-    static var currentInvitation = Invitation.mock()
-    static let shared = JoinManager()
+class RoomManager: NSObject {
+    
+    func create() {
+        
+    }
+
+    static let shard = RoomManager()
 }

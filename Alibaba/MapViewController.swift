@@ -69,7 +69,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     }
     
     override func viewDidAppear(animated: Bool) {
-        let invitation = JoinManager.shared.invitation
+        let invitation = JoinManager.currentInvitation
         
         let location = CLLocation(
             latitude: CLLocationDegrees(invitation.lat),
@@ -164,7 +164,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
-        if let userLocation = annotation as? MKUserLocation {
+        if annotation is MKUserLocation {
             return nil
         }
         
