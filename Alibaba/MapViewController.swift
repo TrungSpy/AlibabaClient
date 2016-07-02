@@ -1,0 +1,48 @@
+//
+//  MapViewController.swift
+//  Alibaba
+//
+//  Created by 村上晋太郎 on 2016/07/02.
+//  Copyright © 2016年 S. Murakami. All rights reserved.
+//
+
+import UIKit
+import FlatUIKit
+import CoreLocation
+import MapKit
+
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UISearchBarDelegate {
+    
+    let locationManager = CLLocationManager()
+    let mapView = MKMapView()
+    let destSearchBar = UISearchBar()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = UIColor.alizarinColor()
+
+        // Do any additional setup after loading the view.
+        
+        locationManager.delegate = self
+        mapView.delegate = self
+        destSearchBar.delegate = self
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
