@@ -28,7 +28,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     
     var destLocation = CLLocationCoordinate2D()
     var userLocation = CLLocationCoordinate2D()
-    var userLocAnnotation = MKPointAnnotation()
+//    var userLocAnnotation = MKPointAnnotation()
     
     var invitationLocAnnotations = [MKPointAnnotation]()
     
@@ -42,7 +42,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         }
         
         mapView.delegate = self
-        
 //        InvitationManager.shared.get {
 //            invitations in
 //            
@@ -90,13 +89,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         userLocation = CLLocationCoordinate2DMake(manager.location!.coordinate.latitude, manager.location!.coordinate.longitude)
-        
-        mapView.removeAnnotation(userLocAnnotation)
-        
-        userLocAnnotation = MKPointAnnotationWithType(type: .User)
-        userLocAnnotation.coordinate = userLocation
-        userLocAnnotation.title = "location"
-        mapView.addAnnotation(userLocAnnotation)
     }
     
     func getRoute()
@@ -155,7 +147,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         let center:CLLocationCoordinate2D = CLLocationCoordinate2DMake((maxLat + minLat) / 2, (maxLon + minLon) / 2);
         let region:MKCoordinateRegion = MKCoordinateRegionMake(center, span);
         
-        mapView.setRegion(mapView.regionThatFits(region), animated:true);
+        mapView.setRegion(mapView.regionThatFits(region), animated:false);
+        mapView.userTrackingMode = .FollowWithHeading
+        
     }
     
     // 経路を描画するときの色や線の太さを指定
@@ -170,6 +164,10 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     }
     
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        if let userLocation = annotation as? MKUserLocation {
+            return nil
+        }
+        
         let view = (mapView.dequeueReusableAnnotationViewWithIdentifier("pin") as? MKPinAnnotationView) ??
             MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
         view.pinTintColor = UIColor.peterRiverColor()
