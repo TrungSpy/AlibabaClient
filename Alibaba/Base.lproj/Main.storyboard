@@ -55,6 +55,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PrO-qk-iUL"/>
+                    <connections>
+                        <outlet property="destSearchBar" destination="mx1-bS-ivH" id="eBo-gu-8gt"/>
+                        <outlet property="mapView" destination="6n7-tQ-h0a" id="J7T-dF-kVR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
