@@ -17,7 +17,7 @@
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3wv-ZY-R7p">
                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                     <connections>
-                        <action selector="tapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="wsw-ZQ-ZEM"/>
+                        <action selector="tapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="eNd-Xl-tuW"/>
                     </connections>
                 </button>
             </subviews>

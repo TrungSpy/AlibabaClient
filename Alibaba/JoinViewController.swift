@@ -57,7 +57,6 @@ class JoinViewController: UIViewController {
                 self?.performSegueWithIdentifier("map", sender: nil)
                 print("helloo")
             }
-            
         }
         
     }
@@ -122,7 +121,7 @@ class JoinViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
     // MARK: - Navigation
 
