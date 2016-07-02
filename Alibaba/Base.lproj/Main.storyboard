@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -72,17 +73,30 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg001" translatesAutoresizingMaskIntoConstraints="NO" id="W71-FT-XqN">
                                 <rect key="frame" x="67" y="215" width="240" height="238"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
                                 <rect key="frame" x="0.0" y="130" width="375" height="375"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo002" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-X4-OO5">
-                                        <rect key="frame" x="87" y="88" width="200" height="200"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo002" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-X4-OO5">
+                                        <rect key="frame" x="24" y="24" width="327" height="327"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vW7-X4-OO5" secondAttribute="height" multiplier="1:1" id="QcN-Mf-xf8"/>
+                                        </constraints>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vW7-X4-OO5" secondAttribute="trailing" constant="24" id="dhu-3R-74y"/>
+                                    <constraint firstItem="vW7-X4-OO5" firstAttribute="centerY" secondItem="eOi-tq-vLl" secondAttribute="centerY" id="hrI-rA-8Cb"/>
+                                    <constraint firstItem="vW7-X4-OO5" firstAttribute="leading" secondItem="eOi-tq-vLl" secondAttribute="leading" constant="24" id="jc2-2q-wmH"/>
+                                    <constraint firstAttribute="width" secondItem="eOi-tq-vLl" secondAttribute="height" multiplier="1:1" id="lGi-wA-qFi"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eOi-tq-vLl" firstAttribute="leading" secondItem="N4e-gh-4Lw" secondAttribute="leading" id="cGV-1s-3bv"/>
+                            <constraint firstAttribute="trailing" secondItem="eOi-tq-vLl" secondAttribute="trailing" id="zfP-Tf-fVa"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="raderView" destination="eOi-tq-vLl" id="anb-T9-V1G"/>

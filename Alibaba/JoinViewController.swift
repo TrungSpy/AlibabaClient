@@ -18,7 +18,7 @@ class JoinViewController: UIViewController {
     
     var prevHeadingDate = NSDate()
     let headingInterval: NSTimeInterval = 0.5
-    var currentHeading = CLHeading()
+    var currentHeading: CLHeading?
     var headingTimer = NSTimer()
     
     var userLocation = CLLocation()
@@ -104,14 +104,14 @@ class JoinViewController: UIViewController {
             view.center.y = center.y + y
         }
         
-        let heading = currentHeading
+        let heading = currentHeading?.trueHeading ?? 0
         raderView.transform = CGAffineTransformMakeRotation(
-            CGFloat(-heading.magneticHeading / 180.0 * M_PI)
+            CGFloat(-heading / 180.0 * M_PI)
         )
         
         for view in inviteViews ?? [] {
             view.transform = CGAffineTransformMakeRotation(
-                CGFloat(heading.magneticHeading / 180.0 * M_PI)
+                CGFloat(heading / 180.0 * M_PI)
             )
         }
     }
