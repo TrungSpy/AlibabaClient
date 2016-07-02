@@ -8,13 +8,3 @@ target 'Alibaba' do
     pod 'FlatUIKit'
     pod 'SwiftyJSON'
 end
-
-"icon001",
-"icon002",
-"icon003",
-"icon004",
-"icon005",
-"icon006",
-"icon007",
-"icon008",
-"icon009",

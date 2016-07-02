@@ -64,15 +64,17 @@ class InvitationManager: NSObject {
     }
     
     func invitationWithJSON(json: JSON) -> Invitation {
+        print(json)
+        
         return Invitation(
-            id: json["id"].int!,
-            category: json["category"].string!,
-            status: json["status"].string!,
-            lon: json["lon"].double!,
-            lat: json["lat"].double!,
+            id: json["id"].int ?? 0,
+            category: json["category"].string ?? "",
+            status: json["status"].string ?? "",
+            lon: json["lon"].double ?? 0,
+            lat: json["lat"].double ?? 0,
             limit: json["limit"].int,
-            created_at: json["created_at"].string!,
-            updated_at: json["updated_at"].string!
+            created_at: json["created_at"].string ?? "",
+            updated_at: json["updated_at"].string ?? ""
         )
     }
     

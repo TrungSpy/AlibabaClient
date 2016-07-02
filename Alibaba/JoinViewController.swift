@@ -65,7 +65,11 @@ class JoinViewController: UIViewController {
     
     func goToMap(invitation: Invitation) {
         JoinManager.currentInvitation = invitation
-        performSegueWithIdentifier("map", sender: nil)
+        RoomManager.shard.create(invitation) {
+            room in
+            RoomManager.currentRoom = room
+            self.performSegueWithIdentifier("map", sender: nil)
+        }
     }
     
     func coord2Point(lat: Double, _ lon: Double) -> (CGFloat, CGFloat) {
