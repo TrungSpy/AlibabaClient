@@ -55,6 +55,10 @@ struct Invitation {
     var created_at: String
     var updated_at: String
     
+    func categoryImage() -> UIImage {
+        return Invitation.imageForCategory(category)
+    }
+    
     static let categories = [
         "beer",
         "sushi",

@@ -53,6 +53,12 @@ class JoinViewController: UIViewController {
             raderView.addSubview(view)
             inviteViews.append(view)
         }
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            for (view, invitation) in zip(self.inviteViews, self.invitations) {
+                view.imageView.image = invitation.categoryImage()
+            }
+        }
     }
     
     func goToMap(invitation: Invitation) {
@@ -119,6 +125,7 @@ class JoinViewController: UIViewController {
     // 究極のタップのしやすさのために体を張る
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         guard let touch = touches.first else { return }
+        print("tap")
         let pos = touch.locationInView(raderView)
         
         func dist(a: CGPoint, _ b: CGPoint) -> CGFloat {

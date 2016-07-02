@@ -11,17 +11,17 @@
             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="beer" translatesAutoresizingMaskIntoConstraints="NO" id="Oxt-F3-avt">
-                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oxt-F3-avt">
+                    <rect key="frame" x="19" y="19" width="22" height="22"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="Oxt-F3-avt" id="Y6U-m0-dpU"/>
+            </connections>
             <point key="canvasLocation" x="110" y="41"/>
         </view>
     </objects>
-    <resources>
-        <image name="beer" width="160" height="160"/>
-    </resources>
 </document>

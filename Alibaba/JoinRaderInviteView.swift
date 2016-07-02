@@ -10,6 +10,8 @@ import UIKit
 
 class JoinRaderInviteView: UIView {
     
+    @IBOutlet weak var imageView: UIImageView!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
