@@ -28,6 +28,7 @@ class InvitationManager: NSObject {
                 response in
                 guard let object = response.result.value else {
                     NSLog("failed to get JSON from server...")
+                    print(response.result.error)
                     return
                 }
                 let json = JSON(object)
@@ -52,6 +53,7 @@ class InvitationManager: NSObject {
                 response in
                 guard let object = response.result.value else {
                     NSLog("failed to get JSON from server...")
+                    print(response.result.error)
                     return
                 }
                 

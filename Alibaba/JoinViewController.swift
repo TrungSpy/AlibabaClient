@@ -40,7 +40,9 @@ class JoinViewController: UIViewController {
         
         InvitationManager.shared.search(1, lat: location.coordinate.latitude, lon: location.coordinate.longitude ) {
             invitations in
+            
             self.invitations = invitations
+//            self.invitations = [invitations.last!] // test
             self.updateInviteViews()
         }
     }
@@ -73,7 +75,7 @@ class JoinViewController: UIViewController {
     }
     
     func coord2Point(lat: Double, _ lon: Double) -> (CGFloat, CGFloat) {
-        let range: Double = 6000 // [meter]
+        let range: Double = 1000 // [meter]
         let meterByDegree: Double = 40075 * 1000 / 360.0
         
         let x_meter = lon * meterByDegree

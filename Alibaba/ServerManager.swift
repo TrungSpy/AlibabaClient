@@ -9,5 +9,6 @@
 import UIKit
 
 class ServerManager: NSObject {
-    static let host = "http://alibaba.ayemos.me"
+//    static let host = "10.201.120.98:3000"
+    static let host = "alibaba.ayemos.me"
 }

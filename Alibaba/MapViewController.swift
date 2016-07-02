@@ -23,7 +23,6 @@ class MKPointAnnotationWithType: MKPointAnnotation {
 }
 
 class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate {
-    
     @IBOutlet weak var mapView: MKMapView!
     
     var destLocation = CLLocationCoordinate2D()
@@ -173,6 +172,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         view.pinTintColor = UIColor.peterRiverColor()
         return view
     }
+    
+    @IBAction func button0Tapped(sender: UIButton) {
+        MessageManager.shared.create(RoomManager.currentRoom, iconType: 1) {
+            _ in
+            
+        }
+    }
+    
     
     /*
      // MARK: - Navigation
