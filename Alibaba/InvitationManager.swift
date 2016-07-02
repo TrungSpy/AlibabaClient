@@ -46,16 +46,6 @@ class InvitationManager: NSObject {
 }
 
 struct Invitation {
-    static let categories = [
-        "test",
-        "test",
-        "test",
-        "test",
-        "test",
-        "test",
-        "test",
-        ]
-    
     var id: Int
     var category: String
     var status: String
@@ -64,6 +54,41 @@ struct Invitation {
     var limit: Int?
     var created_at: String
     var updated_at: String
+    
+    static let categories = [
+        "beer",
+        "sushi",
+        "wine",
+        "cocktail",
+        "karaoke",
+        "juice",
+        "meat",
+        "donut",
+        "coffee",
+        ]
+    
+    static let categoryImageNames = [
+        "icon001",
+        "icon002",
+        "icon003",
+        "icon004",
+        "icon005",
+        "icon006",
+        "icon007",
+        "icon008",
+        "icon009"
+    ]
+    
+    static func imageForCategory(category: String) -> UIImage {
+        let name: String
+        if let index = categories.indexOf(category) {
+            name = categoryImageNames[index]
+        } else {
+            name = categoryImageNames[0]
+        }
+        return UIImage(named: name) ?? UIImage()
+    }
+
     
     static func mock() -> Invitation {
         return Invitation(id: 0, category: "", status: "", lon: 0, lat: 0, limit: nil, created_at: "", updated_at: "")
