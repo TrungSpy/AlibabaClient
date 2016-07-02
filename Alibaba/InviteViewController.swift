@@ -12,29 +12,19 @@ class InviteViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
-    let activities = [
-        "test",
-        "test",
-        "test",
-        "test",
-        "test",
-        "test",
-        "test",
-    ]
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         scrollView.contentSize = CGSizeMake(
-            scrollView.frame.size.width * CGFloat(activities.count),
+            scrollView.frame.size.width * CGFloat(Invitation.categories.count),
             scrollView.frame.size.height)
         
         let center = CGPointMake(
             scrollView.frame.size.width/2,
             scrollView.frame.size.height/2)
         
-        for i in 0..<activities.count {
+        for i in 0..<Invitation.categories.count {
             let size = scrollView.frame.size
             let x = center.x + size.width * CGFloat(i)
             let y = center.y

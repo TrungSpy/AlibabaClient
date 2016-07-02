@@ -53,6 +53,17 @@ class InvitationManager: NSObject {
 }
 
 struct Invitation {
+    static let categories = [
+        "test",
+        "test",
+        "test",
+        "test",
+        "test",
+        "test",
+        "test",
+        ]
+    
+    
 //    enum Categoy {
 //        case Beer, Karaoke
 //    }
