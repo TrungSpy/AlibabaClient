@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="xg4-OB-cRU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="g5X-Kr-tUD">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -8,24 +8,24 @@
         <!--Navigation Controller-->
         <scene sceneID="PZA-8S-SAu">
             <objects>
-                <navigationController id="xg4-OB-cRU" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="xg4-OB-cRU" sceneMemberID="viewController">
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bG8-o2-Bsh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="7Gw-gz-jfu" kind="relationship" relationship="rootViewController" id="w0V-g0-Tfh"/>
+                        <segue destination="7Gw-gz-jfu" kind="relationship" relationship="rootViewController" id="7rZ-2V-LfY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9ql-G4-sNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-453.5" y="252.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Select View Controller-->
         <scene sceneID="W7z-jA-T8p">
             <objects>
-                <viewController id="7Gw-gz-jfu" sceneMemberID="viewController">
+                <viewController id="7Gw-gz-jfu" customClass="SelectViewController" customModule="Alibaba" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W6J-kp-lbr"/>
                         <viewControllerLayoutGuide type="bottom" id="Llq-Yq-R1D"/>
@@ -33,22 +33,34 @@
                     <view key="view" contentMode="scaleToFill" id="ldi-Ho-uUL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47g-dR-ieq">
+                                <rect key="frame" x="170" y="261" width="34" height="30"/>
+                                <state key="normal" title="JOIN"/>
+                                <connections>
+                                    <segue destination="g5X-Kr-tUD" kind="show" id="v5B-Gv-O3G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzi-eb-57V">
+                                <rect key="frame" x="164" y="397" width="47" height="30"/>
+                                <state key="normal" title="INVITE"/>
+                                <connections>
+                                    <segue destination="FAU-l5-Rau" kind="show" id="zgi-8B-Vtc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="OKj-bH-1s1"/>
-                    <connections>
-                        <segue destination="g5X-Kr-tUD" kind="show" id="bVJ-gr-Ag3"/>
-                        <segue destination="FAU-l5-Rau" kind="show" id="WT9-63-aMz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6OS-mW-DUe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="118.5" y="252.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Join View Controller-->
         <scene sceneID="Tfb-gU-acH">
             <objects>
-                <viewController id="g5X-Kr-tUD" sceneMemberID="viewController">
+                <viewController id="g5X-Kr-tUD" customClass="JoinViewController" customModule="Alibaba" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Qt-IT-Jhj"/>
                         <viewControllerLayoutGuide type="bottom" id="Unj-vi-v1e"/>
@@ -66,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="726.5" y="252.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Invite View Controller-->
         <scene sceneID="Ptn-Yn-5B3">
             <objects>
-                <viewController id="FAU-l5-Rau" sceneMemberID="viewController">
+                <viewController id="FAU-l5-Rau" customClass="InviteViewController" customModule="Alibaba" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dB2-ch-f33"/>
                         <viewControllerLayoutGuide type="bottom" id="xY4-OP-bJu"/>
@@ -87,10 +99,10 @@
             </objects>
             <point key="canvasLocation" x="118" y="1084"/>
         </scene>
-        <!--View Controller-->
+        <!--Wait View Controller-->
         <scene sceneID="pRU-IM-2Je">
             <objects>
-                <viewController id="qsr-tP-Bcx" sceneMemberID="viewController">
+                <viewController id="qsr-tP-Bcx" customClass="WaitViewController" customModule="Alibaba" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PMn-g6-Zka"/>
                         <viewControllerLayoutGuide type="bottom" id="0xm-R6-xO5"/>
@@ -108,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="726" y="1084"/>
         </scene>
-        <!--View Controller-->
+        <!--Meet View Controller-->
         <scene sceneID="8yv-qS-cUF">
             <objects>
-                <viewController id="uOb-Dc-Lws" sceneMemberID="viewController">
+                <viewController id="uOb-Dc-Lws" customClass="MeetViewController" customModule="Alibaba" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zlL-6u-utQ"/>
                         <viewControllerLayoutGuide type="bottom" id="daK-ty-B9x"/>
@@ -138,20 +150,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6n7-tQ-h0a">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="mx1-bS-ivH">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6n7-tQ-h0a">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
-                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6n7-tQ-h0a" firstAttribute="top" secondItem="mx1-bS-ivH" secondAttribute="bottom" id="J6J-CP-olF"/>
                             <constraint firstAttribute="trailing" secondItem="6n7-tQ-h0a" secondAttribute="trailing" id="MRu-XS-CGx"/>
                             <constraint firstAttribute="trailing" secondItem="mx1-bS-ivH" secondAttribute="trailing" id="QyH-Ch-Xvz"/>
-                            <constraint firstItem="mx1-bS-ivH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aM8-3N-bQ9"/>
+                            <constraint firstItem="mx1-bS-ivH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WBF-qR-ERX"/>
                             <constraint firstItem="6n7-tQ-h0a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="faK-PE-3oS"/>
                             <constraint firstItem="6n7-tQ-h0a" firstAttribute="top" secondItem="mx1-bS-ivH" secondAttribute="bottom" id="oLg-pf-DfB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6n7-tQ-h0a" secondAttribute="bottom" id="vYr-Bo-Kby"/>
