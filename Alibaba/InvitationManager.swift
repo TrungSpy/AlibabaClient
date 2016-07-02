@@ -12,7 +12,7 @@ import Alamofire
 
 class InvitationManager: NSObject {
     func get(complition: ((invitations: [Invitation]) -> Void)) {
-        Alamofire.request(.GET, "http://10.201.120.98:3000/invite/index")
+        Alamofire.request(.GET, "http://10.201.120.98:3000/invite")
             .responseJSON {
                 response in
                 guard let object = response.result.value else {

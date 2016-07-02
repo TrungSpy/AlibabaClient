@@ -70,13 +70,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg001" translatesAutoresizingMaskIntoConstraints="NO" id="W71-FT-XqN">
-                                <rect key="frame" x="67" y="215" width="240" height="238"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg001" translatesAutoresizingMaskIntoConstraints="NO" id="W71-FT-XqN">
+                                <rect key="frame" x="20" y="166" width="335" height="335"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="W71-FT-XqN" secondAttribute="height" multiplier="1:1" id="FNq-Jr-eaF"/>
+                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
-                                <rect key="frame" x="0.0" y="130" width="375" height="375"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="logo002" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-X4-OO5">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo002" translatesAutoresizingMaskIntoConstraints="NO" id="vW7-X4-OO5">
                                         <rect key="frame" x="24" y="24" width="327" height="327"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vW7-X4-OO5" secondAttribute="height" multiplier="1:1" id="QcN-Mf-xf8"/>
@@ -94,10 +97,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eOi-tq-vLl" firstAttribute="centerY" secondItem="N4e-gh-4Lw" secondAttribute="centerY" id="4TG-qg-cjR"/>
+                            <constraint firstItem="W71-FT-XqN" firstAttribute="centerY" secondItem="N4e-gh-4Lw" secondAttribute="centerY" id="JQ4-5X-O6a"/>
                             <constraint firstItem="eOi-tq-vLl" firstAttribute="leading" secondItem="N4e-gh-4Lw" secondAttribute="leading" id="cGV-1s-3bv"/>
+                            <constraint firstAttribute="trailing" secondItem="W71-FT-XqN" secondAttribute="trailing" constant="20" id="ko7-Aa-FxU"/>
+                            <constraint firstItem="W71-FT-XqN" firstAttribute="leading" secondItem="N4e-gh-4Lw" secondAttribute="leading" constant="20" id="sG3-m8-yBV"/>
                             <constraint firstAttribute="trailing" secondItem="eOi-tq-vLl" secondAttribute="trailing" id="zfP-Tf-fVa"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="raderView" destination="eOi-tq-vLl" id="anb-T9-V1G"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="map" id="aW2-yO-yoZ"/>
