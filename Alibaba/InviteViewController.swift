@@ -8,7 +8,7 @@
 
 import UIKit
 
-class InviteViewController: UIViewController {
+class InviteViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -16,17 +16,17 @@ class InviteViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        scrollView.contentSize = CGSizeMake(
-            scrollView.frame.size.width * CGFloat(Invitation.categories.count),
-            scrollView.frame.size.height)
+        scrollView.delegate = self
         
         let center = CGPointMake(
             scrollView.frame.size.width/2,
             scrollView.frame.size.height/2)
         
         for i in 0..<Invitation.categories.count {
-            let size = scrollView.frame.size
-            let x = center.x + size.width * CGFloat(i)
+            var size = scrollView.frame.size
+            size.width *= 0.8
+            size.height *= 0.8
+            let x = center.x + scrollView.frame.size.width * CGFloat(i)
             let y = center.y
             
             let imageView = UIImageView(image: UIImage(named: "logo002"))
@@ -36,19 +36,42 @@ class InviteViewController: UIViewController {
             
             scrollView.addSubview(imageView)
         }
+        
+        scrollView.contentSize = CGSizeMake(
+            scrollView.frame.size.width * CGFloat(Invitation.categories.count),
+            scrollView.frame.size.height)
+        
+    }
+    
+    func currentCatetory() -> String {
+        let index = Int((scrollView.contentOffset.x + 1) / scrollView.bounds.size.width)
+        return Invitation.categories[index]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+//    
+//    func scrollViewDidScroll(scrollView: UIScrollView) {
+//        scrollView.setContentOffset(
+//            CGPointMake(scrollView.contentOffset.x, 0)
+//            , animated: false)
+//    }
     
 
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        InvitationManager.shared.create()
+        let location = LocationManager.shared.currentLocation
+        let lat = location.coordinate.latitude
+        let lon = location.coordinate.longitude
+        let category = currentCatetory()
+        
+        print((category, lat, lon))
+        
+        InvitationManager.shared.create(category, lat: lat, lon: lon)
     }
 
 }

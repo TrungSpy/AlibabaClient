@@ -11,8 +11,10 @@ import SwiftyJSON
 import Alamofire
 
 class InvitationManager: NSObject {
-    func get(complition: ((invitations: [Invitation]) -> Void)) {
-        Alamofire.request(.GET, "http://10.201.120.98:3000/invite")
+    let host = "10.201.120.98:3000"
+    
+    func index(complition: ((invitations: [Invitation]) -> Void)) {
+        Alamofire.request(.GET, "http://\(host)/invite")
             .responseJSON {
                 response in
                 guard let object = response.result.value else {
@@ -38,8 +40,20 @@ class InvitationManager: NSObject {
         }
     }
     
-    func create() {
-        
+    func create(category: String, lat: Double, lon: Double, complition: (() -> Void)? = nil) {
+        Alamofire.request(
+            .POST,
+            "http://\(host)/invite",
+            parameters: [
+                "category": category,
+                "lat": lat,
+                "lon": lon
+            ]).responseJSON {
+                _ in
+                if let c = complition {
+                    complition
+                }
+        }
     }
     
     static let shared = InvitationManager()

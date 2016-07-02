@@ -36,7 +36,7 @@ class JoinViewController: UIViewController {
             self?.updateInviteViews()
         }
         
-        InvitationManager.shared.get {
+        InvitationManager.shared.index {
             invitations in
             self.invitations = invitations
             self.updateInviteViews()
