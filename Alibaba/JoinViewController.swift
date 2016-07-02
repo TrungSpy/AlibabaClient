@@ -36,7 +36,9 @@ class JoinViewController: UIViewController {
             self?.updateInviteViews()
         }
         
-        InvitationManager.shared.index {
+        let location = LocationManager.shared.currentLocation
+        
+        InvitationManager.shared.search(1, lat: location.coordinate.latitude, lon: location.coordinate.longitude ) {
             invitations in
             self.invitations = invitations
             self.updateInviteViews()

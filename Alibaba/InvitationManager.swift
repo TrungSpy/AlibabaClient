@@ -13,8 +13,15 @@ import Alamofire
 class InvitationManager: NSObject {
     let host = "10.201.120.98:3000"
     
-    func index(complition: ((invitations: [Invitation]) -> Void)) {
-        Alamofire.request(.GET, "http://\(host)/invite")
+    func search(radius: Double, lat: Double, lon: Double, complition: ((invitations: [Invitation]) -> Void)) {
+        Alamofire.request(
+            .GET,
+            "http://\(host)/invite",
+            parameters: [
+                "radius": radius,
+                "lat": lat,
+                "lon": lon
+            ])
             .responseJSON {
                 response in
                 guard let object = response.result.value else {
