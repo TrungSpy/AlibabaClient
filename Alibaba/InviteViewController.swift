@@ -52,12 +52,14 @@ class InviteViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-//    
-//    func scrollViewDidScroll(scrollView: UIScrollView) {
-//        scrollView.setContentOffset(
-//            CGPointMake(scrollView.contentOffset.x, 0)
-//            , animated: false)
-//    }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > 0 {
+            scrollView.setContentOffset(
+                CGPointMake(scrollView.contentOffset.x, 0)
+                , animated: false)
+        }
+    }
     
 
     // MARK: - Navigation
