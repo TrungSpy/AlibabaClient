@@ -31,10 +31,12 @@ class FinishViewController: UIViewController {
     var counter = 0
     func update() {
         
-        if counter % 2 == 0 {
-            view.backgroundColor = UIColor.alizarinColor()
+        if counter % 3 == 0 {
+            view.backgroundColor = UIColor.greenColor()
+        } else if counter % 3 == 1 {
+            view.backgroundColor = UIColor.blueColor()
         } else {
-            view.backgroundColor = UIColor.yellowColor()
+            view.backgroundColor = UIColor.whiteColor()
         }
         
         counter += 1
