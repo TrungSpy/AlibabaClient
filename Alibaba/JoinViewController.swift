@@ -16,26 +16,35 @@ class JoinViewController: UIViewController {
     var inviteViews = [JoinRaderInviteView]()
     var invitations = [Invitation]()
     
-    var prevHeadingDate = NSDate()
-    let headingInterval: NSTimeInterval = 0.3
-    var currentHeading: CLHeading?
-    var headingTimer = NSTimer()
+//    var prevHeadingDate = NSDate()
+//    let headingInterval: NSTimeInterval = 0.3
+//    var currentHeading: CLHeading?
+//    var headingTimer = NSTimer()
     
-    var userLocation = CLLocation()
+//    var userLocation = CLLocation()
+    
+    var updateTimer = NSTimer()
     var invitationUpdateTimer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAnimation()
+//        setupAnimation()
         
-        LocationManager.shared.locationCallbacks.append {
-            [weak self] manager, locations in
-            self?.userLocation = manager.location ?? CLLocation()
-            
-            self?.updateInviteViews()
-        }
+        invitationUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(
+            1.0/30,
+            target: self,
+            selector: #selector(JoinViewController.update),
+            userInfo: nil,
+            repeats: true)
         
+//        LocationManager.shared.locationCallbacks.append {
+//            [weak self] manager, locations in
+//            self?.userLocation = manager.location ?? CLLocation()
+//            
+//            self?.updateInviteViews()
+//        }
+//        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -52,44 +61,32 @@ class JoinViewController: UIViewController {
         invitationUpdateTimer = NSTimer()
     }
     
-    
     func updateInvitations() {
         let location = LocationManager.shared.currentLocation
         InvitationManager.shared.search(1, lat: location.coordinate.latitude, lon: location.coordinate.longitude ) {
             invitations in
-            
             self.invitations = invitations
 //            self.invitations = [invitations.last!] // test
-            self.updateInviteViews()
+//            self.updateInviteViews()
         }
     }
     
-    func updateInviteViews() {
-        dispatch_async(dispatch_get_main_queue()) {
-//            while self.inviteViews.count > self.invitations.count {
-//                self.inviteViews.popLast()?.removeFromSuperview()
-//            }
-//            
-//            while self.inviteViews.count < self.invitations.count {
-//                let view = JoinRaderInviteView.instance()
-//                self.raderView.addSubview(view)
-//                self.inviteViews.append(view)
-//            }
-            
-            for view in self.inviteViews {
-                view.removeFromSuperview()
-            }
-            self.inviteViews.removeAll()
-            
-            for invitation in self.invitations {
-                let view = JoinRaderInviteView.instance()
-                view.imageView.image = invitation.categoryImage()
-                self.raderView.addSubview(view)
-                self.inviteViews.append(view)
-            }
+    func update() {
+        for view in self.inviteViews {
+            view.removeFromSuperview()
         }
+        self.inviteViews.removeAll()
+        
+        for invitation in self.invitations {
+            let view = JoinRaderInviteView.instance()
+            view.imageView.image = invitation.categoryImage()
+            self.raderView.addSubview(view)
+            self.inviteViews.append(view)
+        }
+        
+        self.animateRaderView()
     }
-    
+
     func goToMap(invitation: Invitation) {
         JoinManager.currentInvitation = invitation
         RoomManager.shard.create(invitation) {
@@ -112,27 +109,28 @@ class JoinViewController: UIViewController {
         return (x, y)
     }
     
-    func setupAnimation() {
-        LocationManager.shared.headingCallbacks.append {
-            [weak self] manager, heading in
-            self?.currentHeading = heading
-        }
+//    func setupAnimation() {
+//        LocationManager.shared.headingCallbacks.append {
+//            [weak self] manager, heading in
+//            self?.currentHeading = heading
+//        }
         
-        headingTimer = NSTimer.scheduledTimerWithTimeInterval(
-            headingInterval,
-            target: NSBlockOperation { [weak self] in
+//        headingTimer = NSTimer.scheduledTimerWithTimeInterval(
+//            headingInterval,
+//            target: NSBlockOperation { [weak self] in
 //                UIView.animateWithDuration(self?.headingInterval ?? 0, animations: {
-                    self?.animateRaderView()
 //                })
-            },
-            selector: #selector(NSBlockOperation.main),
-            userInfo: nil,
-            repeats: true)
-    }
+//            },
+//            selector: #selector(NSBlockOperation.main),
+//            userInfo: nil,
+//            repeats: true)
+//    }
     
     func animateRaderView() {
         let raderSize = raderView.bounds.size
         let center = CGPointMake(raderSize.width / 2, raderSize.height / 2)
+        
+        let userLocation = LocationManager.shared.currentLocation
         
         for (invitation, view) in zip(invitations, inviteViews) {
             let lat = invitation.lat - Double(userLocation.coordinate.latitude)
@@ -143,7 +141,7 @@ class JoinViewController: UIViewController {
             view.center.y = center.y + y
         }
         
-        let heading = currentHeading?.trueHeading ?? 0
+        let heading = LocationManager.shared.currentHeading.trueHeading
         raderView.transform = CGAffineTransformMakeRotation(
             CGFloat(-heading / 180.0 * M_PI)
         )
