@@ -66,7 +66,7 @@ class JoinViewController: UIViewController {
         InvitationManager.shared.search(1, lat: location.coordinate.latitude, lon: location.coordinate.longitude ) {
             invitations in
             self.invitations = invitations
-//            self.invitations = [invitations.last!] // test
+            self.invitations = [invitations.last!] // test
 //            self.updateInviteViews()
         }
     }
@@ -89,7 +89,7 @@ class JoinViewController: UIViewController {
 
     func goToMap(invitation: Invitation) {
         JoinManager.currentInvitation = invitation
-        RoomManager.shard.create(invitation) {
+        RoomManager.shared.create(invitation) {
             room in
             RoomManager.currentRoom = room
             self.performSegueWithIdentifier("map", sender: nil)

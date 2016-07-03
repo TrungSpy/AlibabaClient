@@ -9,11 +9,34 @@
 import UIKit
 
 class WaitViewController: UIViewController {
+    
+    var timer = NSTimer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        timer = NSTimer.scheduledTimerWithTimeInterval(
+            1,
+            target: self,
+            selector: #selector(WaitViewController.update),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        timer.invalidate()
+        timer = NSTimer()
+    }
+    
+    func update() {
+        RoomManager.shared.search(JoinManager.currentInvitation) {
+            room in
+            print(room)
+        }
     }
 
     override func didReceiveMemoryWarning() {

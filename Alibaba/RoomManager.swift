@@ -48,6 +48,7 @@ class RoomManager: NSObject {
                 response in
                 guard let object = response.result.value else {
                     NSLog("failed to get JSON from server...")
+                    print(response.result.error)
                     return
                 }
                 
@@ -61,7 +62,7 @@ class RoomManager: NSObject {
         }
     }
 
-    static let shard = RoomManager()
+    static let shared = RoomManager()
 }
 
 struct Room {
