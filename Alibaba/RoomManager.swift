@@ -39,6 +39,7 @@ class RoomManager: NSObject {
     }
 
     func search(invitation: Invitation, completion completionOrNil: ((Room) -> Void)? = nil) {
+        print(invitation.id)
         Alamofire.request(
             .GET,
             "http://\(host)/room/search_by_invite_id",

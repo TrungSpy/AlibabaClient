@@ -76,6 +76,7 @@ class InviteViewController: UIViewController, UIScrollViewDelegate {
         InvitationManager.shared.create(category, lat: lat, lon: lon) {
             invitation in
             
+            InvitationManager.currentInvitation = invitation
         }
     }
 

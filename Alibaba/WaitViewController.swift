@@ -33,7 +33,7 @@ class WaitViewController: UIViewController {
     }
     
     func update() {
-        RoomManager.shared.search(JoinManager.currentInvitation) {
+        RoomManager.shared.search(InvitationManager.currentInvitation) {
             room in
             print(room)
         }
