@@ -58,26 +58,34 @@ class JoinViewController: UIViewController {
         InvitationManager.shared.search(1, lat: location.coordinate.latitude, lon: location.coordinate.longitude ) {
             invitations in
             
-//            self.invitations = invitations
-            self.invitations = [invitations.last!] // test
+            self.invitations = invitations
+//            self.invitations = [invitations.last!] // test
             self.updateInviteViews()
         }
     }
     
     func updateInviteViews() {
-        while inviteViews.count > invitations.count {
-            inviteViews.popLast()?.removeFromSuperview()
-        }
-        
-        while inviteViews.count < invitations.count {
-            let view = JoinRaderInviteView.instance()
-            raderView.addSubview(view)
-            inviteViews.append(view)
-        }
-        
         dispatch_async(dispatch_get_main_queue()) {
-            for (view, invitation) in zip(self.inviteViews, self.invitations) {
+//            while self.inviteViews.count > self.invitations.count {
+//                self.inviteViews.popLast()?.removeFromSuperview()
+//            }
+//            
+//            while self.inviteViews.count < self.invitations.count {
+//                let view = JoinRaderInviteView.instance()
+//                self.raderView.addSubview(view)
+//                self.inviteViews.append(view)
+//            }
+            
+            for view in self.inviteViews {
+                view.removeFromSuperview()
+            }
+            self.inviteViews.removeAll()
+            
+            for invitation in self.invitations {
+                let view = JoinRaderInviteView.instance()
                 view.imageView.image = invitation.categoryImage()
+                self.raderView.addSubview(view)
+                self.inviteViews.append(view)
             }
         }
     }
@@ -113,9 +121,9 @@ class JoinViewController: UIViewController {
         headingTimer = NSTimer.scheduledTimerWithTimeInterval(
             headingInterval,
             target: NSBlockOperation { [weak self] in
-                UIView.animateWithDuration(self?.headingInterval ?? 0, animations: {
+//                UIView.animateWithDuration(self?.headingInterval ?? 0, animations: {
                     self?.animateRaderView()
-                })
+//                })
             },
             selector: #selector(NSBlockOperation.main),
             userInfo: nil,
