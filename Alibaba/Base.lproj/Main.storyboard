@@ -127,11 +127,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oha-SH-QFB">
-                                <rect key="frame" x="0.0" y="178" width="375" height="345"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oha-SH-QFB">
+                                <rect key="frame" x="0.0" y="183" width="375" height="340"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="340" id="fft-Ij-8Be"/>
+                                </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-ZR-Fna">
-                                <rect key="frame" x="166" y="584" width="43" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wIf-ZR-Fna">
+                                <rect key="frame" x="166" y="617" width="43" height="30"/>
                                 <state key="normal" title="BOND"/>
                                 <connections>
                                     <segue destination="qsr-tP-Bcx" kind="show" identifier="wait" id="do0-Qk-Znw"/>
@@ -139,6 +142,13 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oha-SH-QFB" firstAttribute="leading" secondItem="UA2-Hg-7zH" secondAttribute="leading" id="0jb-qN-mRX"/>
+                            <constraint firstItem="wIf-ZR-Fna" firstAttribute="top" secondItem="oha-SH-QFB" secondAttribute="bottom" constant="94" id="FGQ-WF-MZG"/>
+                            <constraint firstAttribute="trailing" secondItem="oha-SH-QFB" secondAttribute="trailing" id="JxS-cK-fCq"/>
+                            <constraint firstItem="xY4-OP-bJu" firstAttribute="top" secondItem="wIf-ZR-Fna" secondAttribute="bottom" constant="20" id="lmr-hF-5Lh"/>
+                            <constraint firstItem="wIf-ZR-Fna" firstAttribute="centerX" secondItem="UA2-Hg-7zH" secondAttribute="centerX" id="tqt-f8-v5L"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="scrollView" destination="oha-SH-QFB" id="uYQ-bA-Wes"/>
