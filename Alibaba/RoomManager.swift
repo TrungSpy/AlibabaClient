@@ -56,9 +56,20 @@ class RoomManager: NSObject {
                 let json = JSON(object)
                 
                 print(json)
-//                if let completion = completionOrNil {
-//                    let room = Room.fromJSON(json)
-//                    completion(room)
+                
+                if let _ = json.dictionary {
+                    if let completion = completionOrNil {
+                        let room = Room.fromJSON(json)
+                        completion(room)
+                    }
+                }
+                
+//                if (json.array?.count && 0) > 0 {
+//                    let room = json.array?.first
+//                    if let completion = completionOrNil {
+//                        let room = Room.fromJSON(json)
+//                        completion(room)
+//                    }
 //                }
         }
     }

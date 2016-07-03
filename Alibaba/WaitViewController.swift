@@ -40,7 +40,9 @@ class WaitViewController: UIViewController {
     func update() {
         RoomManager.shared.search(InvitationManager.currentInvitation) {
             room in
-            print(room)
+            RoomManager.currentRoom = room
+            
+            self.performSegueWithIdentifier("meet", sender: nil)
         }
     }
 

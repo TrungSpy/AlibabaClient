@@ -215,7 +215,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpU-Eh-tSz">
                                         <rect key="frame" x="306" y="0.0" width="69" height="86"/>
                                         <connections>
-                                            <segue destination="uOb-Dc-Lws" kind="show" id="J12-BV-53M"/>
+                                            <segue destination="uOb-Dc-Lws" kind="show" identifier="meet" id="J12-BV-53M"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -538,9 +538,9 @@
         <image name="meet_pin" width="454" height="697"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="do0-Qk-Znw"/>
-        <segue reference="TN3-gj-na7"/>
-        <segue reference="4Qu-MM-9Oa"/>
         <segue reference="aW2-yO-yoZ"/>
+        <segue reference="do0-Qk-Znw"/>
+        <segue reference="J12-BV-53M"/>
+        <segue reference="4Qu-MM-9Oa"/>
     </inferredMetricsTieBreakers>
 </document>

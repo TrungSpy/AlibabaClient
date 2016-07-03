@@ -66,7 +66,7 @@ class JoinViewController: UIViewController {
         InvitationManager.shared.search(1, lat: location.coordinate.latitude, lon: location.coordinate.longitude ) {
             invitations in
             self.invitations = invitations
-            self.invitations = [invitations.last!] // test
+//            self.invitations = [invitations.last!] // test
 //            self.updateInviteViews()
         }
     }
@@ -171,8 +171,11 @@ class JoinViewController: UIViewController {
         let th: CGFloat = 50
         
         if dist(nearest.center, pos) < th {
-            guard let index = inviteViews.indexOf(nearest) else { return }
-            let invitation = invitations[index]
+//            guard let index = inviteViews.indexOf(nearest) else { return }
+//            let invitation = invitations[index]
+            guard let invitation = invitations.last else { // test
+                return
+            }
             goToMap(invitation)
         }
     }
