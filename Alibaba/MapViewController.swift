@@ -174,10 +174,50 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
     }
     
     @IBAction func button0Tapped(sender: UIButton) {
-        MessageManager.shared.create(RoomManager.currentRoom, iconType: 1) {
-            _ in
-            
-        }
+        sendMessage(0)
+    }
+    @IBAction func button1Tapped(sender: UIButton) {
+        sendMessage(1)
+    }
+    @IBAction func button2Tapped(sender: UIButton) {
+        sendMessage(2)
+    }
+    @IBAction func button3Tapped(sender: UIButton) {
+        sendMessage(3)
+    }
+    @IBAction func button4Tapped(sender: UIButton) {
+        sendMessage(4)
+    }
+    @IBAction func button5Tapped(sender: UIButton) {
+        sendMessage(5)
+    }
+    @IBAction func button6Tapped(sender: UIButton) {
+        sendMessage(6)
+    }
+    @IBAction func button7Tapped(sender: UIButton) {
+        sendMessage(7)
+    }
+    @IBAction func button8Tapped(sender: UIButton) {
+        sendMessage(8)
+    }
+    
+    func randf() -> CGFloat {
+        return CGFloat(arc4random_uniform(UINT32_MAX)) / CGFloat(UINT32_MAX)
+    }
+    
+    func sendMessage(iconType: Int) {
+        let point = CGPointMake(
+            self.view.bounds.size.width * randf(),
+            self.view.bounds.size.height + 60 * randf()
+            )
+        
+        let view = MessageView.instance(iconType, pos: point, direction: .Up)
+        self.view.addSubview(view)
+        view.fire()
+        
+//        MessageManager.shared.create(RoomManager.currentRoom, iconType: 1) {
+//            _ in
+//        }
     }
     
     

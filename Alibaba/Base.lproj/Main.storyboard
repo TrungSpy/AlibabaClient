@@ -262,38 +262,65 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTJ-Jo-GTp">
                                 <rect key="frame" x="194" y="524.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_003"/>
+                                <connections>
+                                    <action selector="button2Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5A-EI-NPm"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTd-WZ-Oos">
                                 <rect key="frame" x="265" y="524" width="63" height="58.5"/>
                                 <state key="normal" title="I" image="icon2b_004"/>
+                                <connections>
+                                    <action selector="button3Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wd2-Za-Ioz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVi-ec-zZG">
                                 <rect key="frame" x="123" y="524.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_002"/>
+                                <connections>
+                                    <action selector="button1Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JMu-hW-N92"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vud-Jc-1AA">
                                 <rect key="frame" x="52" y="524.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_001"/>
+                                <connections>
+                                    <action selector="button0Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cNb-mG-c9A"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lu4-GX-wbo">
                                 <rect key="frame" x="298" y="589.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_009"/>
+                                <connections>
+                                    <action selector="button8Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WfH-g2-5Y8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQz-cd-bVu">
                                 <rect key="frame" x="227" y="589.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_008"/>
+                                <connections>
+                                    <action selector="button7Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aC7-qd-Ghg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlE-sC-qp3">
                                 <rect key="frame" x="156" y="589.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_007"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-oY-uDt">
-                                <rect key="frame" x="85" y="589.5" width="63" height="57"/>
-                                <state key="normal" title="I" image="icon2b_006"/>
+                                <connections>
+                                    <action selector="button6Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xFA-K3-e5v"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sq-aU-Tw6">
                                 <rect key="frame" x="14" y="589.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_005"/>
+                                <connections>
+                                    <action selector="button4Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MlA-w8-LeZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-oY-uDt">
+                                <rect key="frame" x="85" y="590" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_006"/>
+                                <connections>
+                                    <action selector="button5Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tbe-XB-LEt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

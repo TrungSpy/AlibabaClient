@@ -18,7 +18,6 @@ class MessageView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = UIColor.alizarinColor()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -31,11 +30,24 @@ class MessageView: UIView {
             delay: 0,
             options: UIViewAnimationOptions.CurveEaseOut,
             animations: {
-                self.center.y -= 400
-                self.alpha = 0
+                if self.direction == .Up {
+                    self.center.y -= 400
+                } else {
+                    self.center.y += 400
+                }
             }, completion: {
                 finished in
                 self.removeFromSuperview()
+            })
+        
+        UIView.animateWithDuration(
+            1,
+            delay: 1,
+            options: UIViewAnimationOptions.CurveEaseOut,
+            animations: {
+                self.alpha = 0
+            }, completion: {
+                finished in
             })
     }
     
@@ -44,6 +56,7 @@ class MessageView: UIView {
         view.center = pos
         
         let imageView = UIImageView(image: UIImage(named: Message.imageNames[iconType]) ?? UIImage())
+        imageView.frame = view.bounds
         view.addSubview(imageView)
         view.direction = direction
         
