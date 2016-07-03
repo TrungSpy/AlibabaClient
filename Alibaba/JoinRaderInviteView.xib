@@ -15,7 +15,7 @@
                     <rect key="frame" x="19" y="19" width="22" height="22"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.10196078568696976" green="0.73725491762161255" blue="0.61176472902297974" alpha="0.51810344827586208" colorSpace="calibratedRGB"/>
             <gestureRecognizers/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

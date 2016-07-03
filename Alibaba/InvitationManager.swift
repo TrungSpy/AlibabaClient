@@ -18,7 +18,7 @@ class InvitationManager: NSObject {
     func search(radius: Double, lat: Double, lon: Double, complition: ((invitations: [Invitation]) -> Void)) {
         Alamofire.request(
             .GET,
-            "http://\(host)/invite",
+            "http://\(host)/invite/search",
             parameters: [
                 "radius": radius,
                 "lat": lat,

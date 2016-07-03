@@ -22,7 +22,7 @@ class JoinViewController: UIViewController {
     var headingTimer = NSTimer()
     
     var userLocation = CLLocation()
-    
+    var invitationUpdateTimer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,13 +36,30 @@ class JoinViewController: UIViewController {
             self?.updateInviteViews()
         }
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        invitationUpdateTimer = NSTimer.scheduledTimerWithTimeInterval(
+            1,
+            target: self,
+            selector: #selector(JoinViewController.updateInvitations),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        invitationUpdateTimer.invalidate()
+        invitationUpdateTimer = NSTimer()
+    }
+    
+    
+    func updateInvitations() {
         let location = LocationManager.shared.currentLocation
-        
         InvitationManager.shared.search(1, lat: location.coordinate.latitude, lon: location.coordinate.longitude ) {
             invitations in
             
-            self.invitations = invitations
-//            self.invitations = [invitations.last!] // test
+//            self.invitations = invitations
+            self.invitations = [invitations.last!] // test
             self.updateInviteViews()
         }
     }
