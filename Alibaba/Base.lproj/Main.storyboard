@@ -87,9 +87,13 @@
                                     <constraint firstAttribute="width" secondItem="W71-FT-XqN" secondAttribute="height" multiplier="1:1" id="FNq-Jr-eaF"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_rader" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-gb-zfq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="698"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-uH-5aU">
+                                <rect key="frame" x="67" y="20" width="240" height="39"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-uN-5mc">
+                                <rect key="frame" x="0.0" y="73" width="375" height="13"/>
+                                <color key="backgroundColor" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                                 <subviews>
@@ -108,13 +112,9 @@
                                     <constraint firstAttribute="width" secondItem="eOi-tq-vLl" secondAttribute="height" multiplier="1:1" id="lGi-wA-qFi"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="vUQ-uH-5aU">
-                                <rect key="frame" x="67" y="20" width="240" height="39"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_rader" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-gb-zfq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="698"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CKG-uN-5mc">
-                                <rect key="frame" x="0.0" y="73" width="375" height="13"/>
-                                <color key="backgroundColor" red="0.92549020049999997" green="0.94117647410000005" blue="0.94509804249999996" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -386,7 +386,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6n7-tQ-h0a">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6n7-tQ-h0a">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTJ-Jo-GTp">
@@ -452,14 +452,15 @@
                                     <action selector="button5Tapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tbe-XB-LEt"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0xH-YS-YAK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="0jC-dZ-YrY">
+                                <rect key="frame" x="67" y="20" width="240" height="39"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="6n7-tQ-h0a" secondAttribute="trailing" id="MRu-XS-CGx"/>
-                            <constraint firstItem="6n7-tQ-h0a" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vco-Uh-g13"/>
-                            <constraint firstItem="6n7-tQ-h0a" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="faK-PE-3oS"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6n7-tQ-h0a" secondAttribute="bottom" id="vYr-Bo-Kby"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PrO-qk-iUL"/>
                     <connections>
