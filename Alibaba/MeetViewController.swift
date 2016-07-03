@@ -9,11 +9,29 @@
 import UIKit
 
 class MeetViewController: UIViewController {
+    
+    @IBOutlet weak var goalView: UIView!
+    @IBOutlet weak var startView: UIView!
+    @IBOutlet weak var distantView: UIView!
+    
+    var timer = NSTimer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        timer = NSTimer.scheduledTimerWithTimeInterval(
+            1,
+            target: self,
+            selector: #selector(MeetViewController.updateDistance),
+            userInfo: nil,
+            repeats: true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +39,15 @@ class MeetViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    var counter = 0
+    func updateDistance() {
+        let rate = CGFloat(counter)/20
+        
+        distantView.center.x = (goalView.center.x - startView.center.x) * rate + startView.center.x
+        
+        
+        counter += 1
+    }
 
     /*
     // MARK: - Navigation
