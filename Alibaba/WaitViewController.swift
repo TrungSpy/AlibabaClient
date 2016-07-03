@@ -12,6 +12,8 @@ class WaitViewController: UIViewController {
     
     var timer = NSTimer()
 
+    @IBOutlet weak var categoryImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,9 @@ class WaitViewController: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        categoryImageView.image = InvitationManager.currentInvitation.categoryImage()
+        
         timer = NSTimer.scheduledTimerWithTimeInterval(
             1,
             target: self,

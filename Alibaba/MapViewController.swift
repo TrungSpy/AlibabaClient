@@ -214,12 +214,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegat
         let view = MessageView.instance(iconType, pos: point, direction: .Up)
         self.view.addSubview(view)
         view.fire()
-        
-//        MessageManager.shared.create(RoomManager.currentRoom, iconType: 1) {
-//            _ in
-//        }
     }
-    
     
     /*
      // MARK: - Navigation

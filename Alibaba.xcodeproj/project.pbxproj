@@ -14,6 +14,7 @@
 		3735473C1D27B2BD00ABE81B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3735473A1D27B2BD00ABE81B /* LaunchScreen.storyboard */; };
 		373547441D27B2F500ABE81B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373547431D27B2F500ABE81B /* MapViewController.swift */; };
 		373547461D27C8BD00ABE81B /* InvitationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373547451D27C8BD00ABE81B /* InvitationManager.swift */; };
+		373C882B1D28D8A5004E2B34 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C882A1D28D8A5004E2B34 /* FinishViewController.swift */; };
 		37F1EB201D27F31B003C8861 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB1F1D27F31B003C8861 /* InviteViewController.swift */; };
 		37F1EB221D27F327003C8861 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB211D27F327003C8861 /* WaitViewController.swift */; };
 		37F1EB241D27F335003C8861 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB231D27F335003C8861 /* SelectViewController.swift */; };
@@ -38,6 +39,7 @@
 		3735473D1D27B2BD00ABE81B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		373547431D27B2F500ABE81B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		373547451D27C8BD00ABE81B /* InvitationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationManager.swift; sourceTree = "<group>"; };
+		373C882A1D28D8A5004E2B34 /* FinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
 		37F1EB1F1D27F31B003C8861 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		37F1EB211D27F327003C8861 /* WaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		37F1EB231D27F335003C8861 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				37F1EB231D27F335003C8861 /* SelectViewController.swift */,
 				37F1EB251D27F340003C8861 /* JoinViewController.swift */,
 				37F1EB271D27F35B003C8861 /* MeetViewController.swift */,
+				373C882A1D28D8A5004E2B34 /* FinishViewController.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				373547321D27B2BD00ABE81B /* AppDelegate.swift in Sources */,
 				37F1EB3B1D287D78003C8861 /* MessageManager.swift in Sources */,
 				37F1EB221D27F327003C8861 /* WaitViewController.swift in Sources */,
+				373C882B1D28D8A5004E2B34 /* FinishViewController.swift in Sources */,
 				37F1EB371D28716B003C8861 /* RoomManager.swift in Sources */,
 				37F1EB301D280173003C8861 /* JoinRaderInviteView.swift in Sources */,
 				37F1EB241D27F335003C8861 /* SelectViewController.swift in Sources */,

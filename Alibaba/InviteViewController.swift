@@ -19,17 +19,18 @@ class InviteViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         
         let center = CGPointMake(
-            view.frame.size.width/2,
-            view.frame.size.height/2)
+            scrollView.frame.size.width/2,
+            scrollView.frame.size.height/2)
         
         for i in 0..<Invitation.categories.count {
-            var size = view.frame.size
+            var size = scrollView.frame.size
             size.width *= 0.8
             size.height *= 0.8
-            let x = center.x + view.frame.size.width * CGFloat(i)
+            let x = center.x + scrollView.frame.size.width * CGFloat(i)
             let y = center.y
             
-            let imageView = UIImageView(image: UIImage(named: "logo002"))
+            
+            let imageView = UIImageView(image: Invitation.imageForCategory(Invitation.categories[i]) ?? UIImage())
             imageView.frame.size = size
             imageView.center = CGPointMake(x, y)
             imageView.contentMode = .ScaleAspectFit
