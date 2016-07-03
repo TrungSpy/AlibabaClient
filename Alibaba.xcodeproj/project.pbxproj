@@ -26,6 +26,7 @@
 		37F1EB371D28716B003C8861 /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB361D28716B003C8861 /* RoomManager.swift */; };
 		37F1EB391D28719E003C8861 /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB381D28719E003C8861 /* ServerManager.swift */; };
 		37F1EB3B1D287D78003C8861 /* MessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB3A1D287D78003C8861 /* MessageManager.swift */; };
+		37F1EB3F1D28ABEC003C8861 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB3E1D28ABEC003C8861 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		37F1EB361D28716B003C8861 /* RoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
 		37F1EB381D28719E003C8861 /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		37F1EB3A1D287D78003C8861 /* MessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageManager.swift; sourceTree = "<group>"; };
+		37F1EB3E1D28ABEC003C8861 /* MessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		7193E27D01140F41429EAE03 /* Pods-Alibaba.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alibaba.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alibaba/Pods-Alibaba.release.xcconfig"; sourceTree = "<group>"; };
 		A38873037BDD038EB8B0114E /* Pods_Alibaba.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alibaba.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAB0D5C210FD6901A863E9E6 /* Pods-Alibaba.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alibaba.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alibaba/Pods-Alibaba.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		37F1EB1E1D27F298003C8861 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37F1EB3D1D28ABBD003C8861 /* Messages */,
 				37F1EB351D28302A003C8861 /* InviteViewSub */,
 				37F1EB2E1D280137003C8861 /* JoinViewSub */,
 				373547431D27B2F500ABE81B /* MapViewController.swift */,
@@ -157,6 +160,14 @@
 			children = (
 			);
 			name = InviteViewSub;
+			sourceTree = "<group>";
+		};
+		37F1EB3D1D28ABBD003C8861 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				37F1EB3E1D28ABEC003C8861 /* MessageView.swift */,
+			);
+			name = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +303,7 @@
 				37F1EB301D280173003C8861 /* JoinRaderInviteView.swift in Sources */,
 				37F1EB241D27F335003C8861 /* SelectViewController.swift in Sources */,
 				37F1EB281D27F35B003C8861 /* MeetViewController.swift in Sources */,
+				37F1EB3F1D28ABEC003C8861 /* MessageView.swift in Sources */,
 				37F1EB341D282452003C8861 /* JoinManager.swift in Sources */,
 				37F1EB201D27F31B003C8861 /* InviteViewController.swift in Sources */,
 				37F1EB391D28719E003C8861 /* ServerManager.swift in Sources */,
