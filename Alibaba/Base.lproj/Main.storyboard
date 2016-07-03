@@ -35,22 +35,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_invite" translatesAutoresizingMaskIntoConstraints="NO" id="3zt-1c-vWd">
+                                <rect key="frame" x="0.0" y="236" width="375" height="68"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_join" translatesAutoresizingMaskIntoConstraints="NO" id="jdg-8v-Sd0">
+                                <rect key="frame" x="0.0" y="449" width="380" height="68"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="47g-dR-ieq">
-                                <rect key="frame" x="170" y="261" width="34" height="30"/>
-                                <state key="normal" title="JOIN"/>
+                                <rect key="frame" x="0.0" y="197" width="375" height="146"/>
                                 <connections>
                                     <segue destination="g5X-Kr-tUD" kind="show" id="v5B-Gv-O3G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzi-eb-57V">
-                                <rect key="frame" x="164" y="397" width="47" height="30"/>
-                                <state key="normal" title="INVITE"/>
+                                <rect key="frame" x="0.0" y="396" width="375" height="169"/>
                                 <connections>
                                     <segue destination="FAU-l5-Rau" kind="show" id="zgi-8B-Vtc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="Iak-DQ-CuV">
+                                <rect key="frame" x="67" y="26" width="240" height="39"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9aG-4D-Rzj">
+                                <rect key="frame" x="0.0" y="79" width="375" height="13"/>
+                                <color key="backgroundColor" red="0.92549020051956177" green="0.94117647409439087" blue="0.94509804248809814" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.17254901960784313" green="0.24313725490196078" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="OKj-bH-1s1"/>
                 </viewController>
@@ -75,6 +86,9 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="W71-FT-XqN" secondAttribute="height" multiplier="1:1" id="FNq-Jr-eaF"/>
                                 </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_rader" translatesAutoresizingMaskIntoConstraints="NO" id="Qmy-gb-zfq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="698"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOi-tq-vLl">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
@@ -294,6 +308,10 @@
     </scenes>
     <resources>
         <image name="bg001" width="432" height="429"/>
+        <image name="bg_rader" width="933" height="1523"/>
+        <image name="font_bond" width="1356" height="358"/>
+        <image name="font_invite" width="1490" height="358"/>
+        <image name="font_join" width="1168" height="358"/>
         <image name="icon2b_001" width="337" height="315"/>
         <image name="icon2b_002" width="337" height="315"/>
         <image name="logo002" width="381" height="381"/>
