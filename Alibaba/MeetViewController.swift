@@ -54,7 +54,9 @@ class MeetViewController: UIViewController {
         
         counter += 1
         if counter > 600 {
-            counter = 600
+            timer.invalidate()
+            timer = NSTimer()
+            performSegueWithIdentifier("finish", sender: nil)
         }
     }
     

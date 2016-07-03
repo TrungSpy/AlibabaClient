@@ -380,7 +380,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dij-QV-nsU">
                                 <rect key="frame" x="299" y="3" width="69" height="86"/>
                                 <connections>
-                                    <segue destination="HMw-Fk-oPB" kind="show" id="34z-EV-1od"/>
+                                    <segue destination="HMw-Fk-oPB" kind="show" identifier="finish" id="34z-EV-1od"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -541,6 +541,6 @@
         <segue reference="aW2-yO-yoZ"/>
         <segue reference="do0-Qk-Znw"/>
         <segue reference="J12-BV-53M"/>
-        <segue reference="4Qu-MM-9Oa"/>
+        <segue reference="34z-EV-1od"/>
     </inferredMetricsTieBreakers>
 </document>
