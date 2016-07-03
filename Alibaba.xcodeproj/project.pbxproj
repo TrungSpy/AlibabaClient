@@ -15,6 +15,7 @@
 		373547441D27B2F500ABE81B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373547431D27B2F500ABE81B /* MapViewController.swift */; };
 		373547461D27C8BD00ABE81B /* InvitationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373547451D27C8BD00ABE81B /* InvitationManager.swift */; };
 		373C882B1D28D8A5004E2B34 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C882A1D28D8A5004E2B34 /* FinishViewController.swift */; };
+		373C88301D28DC08004E2B34 /* BlockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373C882F1D28DC08004E2B34 /* BlockButton.swift */; };
 		37F1EB201D27F31B003C8861 /* InviteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB1F1D27F31B003C8861 /* InviteViewController.swift */; };
 		37F1EB221D27F327003C8861 /* WaitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB211D27F327003C8861 /* WaitViewController.swift */; };
 		37F1EB241D27F335003C8861 /* SelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F1EB231D27F335003C8861 /* SelectViewController.swift */; };
@@ -40,6 +41,7 @@
 		373547431D27B2F500ABE81B /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		373547451D27C8BD00ABE81B /* InvitationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvitationManager.swift; sourceTree = "<group>"; };
 		373C882A1D28D8A5004E2B34 /* FinishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
+		373C882F1D28DC08004E2B34 /* BlockButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockButton.swift; sourceTree = "<group>"; };
 		37F1EB1F1D27F31B003C8861 /* InviteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteViewController.swift; sourceTree = "<group>"; };
 		37F1EB211D27F327003C8861 /* WaitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitViewController.swift; sourceTree = "<group>"; };
 		37F1EB231D27F335003C8861 /* SelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectViewController.swift; sourceTree = "<group>"; };
@@ -119,9 +121,18 @@
 			path = Alibaba;
 			sourceTree = "<group>";
 		};
+		373C882C1D28DBC9004E2B34 /* UtilViews */ = {
+			isa = PBXGroup;
+			children = (
+				373C882F1D28DC08004E2B34 /* BlockButton.swift */,
+			);
+			name = UtilViews;
+			sourceTree = "<group>";
+		};
 		37F1EB1E1D27F298003C8861 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				373C882C1D28DBC9004E2B34 /* UtilViews */,
 				37F1EB3D1D28ABBD003C8861 /* Messages */,
 				37F1EB351D28302A003C8861 /* InviteViewSub */,
 				37F1EB2E1D280137003C8861 /* JoinViewSub */,
@@ -311,6 +322,7 @@
 				37F1EB341D282452003C8861 /* JoinManager.swift in Sources */,
 				37F1EB201D27F31B003C8861 /* InviteViewController.swift in Sources */,
 				37F1EB391D28719E003C8861 /* ServerManager.swift in Sources */,
+				373C88301D28DC08004E2B34 /* BlockButton.swift in Sources */,
 				37F1EB261D27F340003C8861 /* JoinViewController.swift in Sources */,
 				37F1EB2C1D27F56A003C8861 /* LocationManager.swift in Sources */,
 			);

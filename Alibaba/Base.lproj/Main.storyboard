@@ -106,6 +106,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="ooP-jI-e5I">
                                 <rect key="frame" x="67" y="20" width="240" height="39"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dn-62-n7W">
+                                <rect key="frame" x="0.0" y="0.0" width="69" height="86"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dub-vH-dba">
+                                <rect key="frame" x="300" y="1" width="69" height="86"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Shh-II-1cS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -153,6 +162,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaj-q0-Ixl">
+                                <rect key="frame" x="2" y="0.0" width="69" height="86"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STe-se-AOJ">
+                                <rect key="frame" x="302" y="1" width="69" height="86"/>
+                                <connections>
+                                    <segue destination="qsr-tP-Bcx" kind="show" id="YQX-jw-KXl"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="KET-3P-KHF">
                                 <rect key="frame" x="67" y="20" width="240" height="39"/>
                             </imageView>
@@ -182,16 +200,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font waiting" translatesAutoresizingMaskIntoConstraints="NO" id="Ru5-n5-tRy">
                                 <rect key="frame" x="67" y="160" width="240" height="68"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEh-zB-8LW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="PHR-mT-xSK">
                                 <rect key="frame" x="67" y="20" width="240" height="39"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wAG-gY-WqK">
                                 <rect key="frame" x="67" y="262" width="240" height="246"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEh-zB-8LW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHs-kc-Agv">
+                                        <rect key="frame" x="3" y="0.0" width="69" height="86"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LpU-Eh-tSz">
+                                        <rect key="frame" x="306" y="0.0" width="69" height="86"/>
+                                        <connections>
+                                            <segue destination="uOb-Dc-Lws" kind="show" id="J12-BV-53M"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -219,6 +248,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="M4O-Ye-1GR">
                                 <rect key="frame" x="14" y="245" width="346" height="177"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWJ-vt-rKL">
+                                <rect key="frame" x="14" y="207" width="346" height="250"/>
+                                <connections>
+                                    <action selector="bondButtonPush:" destination="HMw-Fk-oPB" eventType="touchUpInside" id="tu1-wj-5zM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -342,6 +377,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dij-QV-nsU">
+                                <rect key="frame" x="299" y="3" width="69" height="86"/>
+                                <connections>
+                                    <segue destination="HMw-Fk-oPB" kind="show" id="34z-EV-1od"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -442,6 +483,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="font_bond" translatesAutoresizingMaskIntoConstraints="NO" id="0jC-dZ-YrY">
                                 <rect key="frame" x="67" y="20" width="240" height="39"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="saj-Ed-eC7">
+                                <rect key="frame" x="2" y="5" width="69" height="86"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ii-Gx-8jd">
+                                <rect key="frame" x="302" y="6" width="69" height="86"/>
+                                <connections>
+                                    <segue destination="HMw-Fk-oPB" kind="show" id="Pdw-03-F8u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -488,6 +538,9 @@
         <image name="meet_pin" width="454" height="697"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NXD-nt-cIL"/>
+        <segue reference="do0-Qk-Znw"/>
+        <segue reference="TN3-gj-na7"/>
+        <segue reference="4Qu-MM-9Oa"/>
+        <segue reference="aW2-yO-yoZ"/>
     </inferredMetricsTieBreakers>
 </document>

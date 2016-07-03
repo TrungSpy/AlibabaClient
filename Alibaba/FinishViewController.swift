@@ -12,6 +12,10 @@ class FinishViewController: UIViewController {
     
     var timer = NSTimer()
 
+    @IBAction func bondButtonPush(sender: UIButton) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
