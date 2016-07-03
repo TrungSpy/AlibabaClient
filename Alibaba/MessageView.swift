@@ -10,6 +10,10 @@ import UIKit
 
 class MessageView: UIView {
     
+    enum Direction {
+        case Up, Down
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.alizarinColor()
@@ -33,7 +37,7 @@ class MessageView: UIView {
             })
     }
     
-    class func instance(pos: CGPoint) -> MessageView {
+    class func instance(iconType: Int, pos: CGPoint, direction: Direction) -> MessageView {
         let view = MessageView(frame: CGRectMake(0, 0, 66, 66))
         view.center = pos
         return view
