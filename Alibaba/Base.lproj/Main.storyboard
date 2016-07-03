@@ -259,33 +259,41 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6n7-tQ-h0a">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdA-aU-jgP">
-                                <rect key="frame" x="265" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTJ-Jo-GTp">
+                                <rect key="frame" x="194" y="524.5" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_003"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QuE-n4-cxF">
-                                <rect key="frame" x="309" y="573" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTd-WZ-Oos">
+                                <rect key="frame" x="265" y="524" width="63" height="58.5"/>
+                                <state key="normal" title="I" image="icon2b_004"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-s8-ffO">
-                                <rect key="frame" x="215" y="573" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-UM-yoe">
-                                <rect key="frame" x="109" y="428" width="143" height="132"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jVi-ec-zZG">
+                                <rect key="frame" x="123" y="524.5" width="63" height="57"/>
                                 <state key="normal" title="I" image="icon2b_002"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSc-ky-MPU">
-                                <rect key="frame" x="81" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vud-Jc-1AA">
+                                <rect key="frame" x="52" y="524.5" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_001"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SA1-73-VMP">
-                                <rect key="frame" x="172" y="617" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lu4-GX-wbo">
+                                <rect key="frame" x="298" y="589.5" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_009"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtg-i3-qMn">
-                                <rect key="frame" x="31" y="520" width="78" height="70"/>
-                                <state key="normal" title="=" image="icon2b_001"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQz-cd-bVu">
+                                <rect key="frame" x="227" y="589.5" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_008"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SlE-sC-qp3">
+                                <rect key="frame" x="156" y="589.5" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_007"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2d-oY-uDt">
+                                <rect key="frame" x="85" y="589.5" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_006"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1sq-aU-Tw6">
+                                <rect key="frame" x="14" y="589.5" width="63" height="57"/>
+                                <state key="normal" title="I" image="icon2b_005"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -314,6 +322,13 @@
         <image name="font_join" width="1168" height="358"/>
         <image name="icon2b_001" width="337" height="315"/>
         <image name="icon2b_002" width="337" height="315"/>
+        <image name="icon2b_003" width="337" height="315"/>
+        <image name="icon2b_004" width="337" height="315"/>
+        <image name="icon2b_005" width="337" height="315"/>
+        <image name="icon2b_006" width="337" height="315"/>
+        <image name="icon2b_007" width="337" height="315"/>
+        <image name="icon2b_008" width="337" height="315"/>
+        <image name="icon2b_009" width="337" height="315"/>
         <image name="logo002" width="381" height="381"/>
     </resources>
 </document>
