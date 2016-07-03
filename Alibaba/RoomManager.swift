@@ -38,6 +38,29 @@ class RoomManager: NSObject {
         }
     }
 
+    func search(invitation: Invitation, completion completionOrNil: ((Room) -> Void)? = nil) {
+        Alamofire.request(
+            .GET,
+            "http://\(host)/room/search_by_invite_id",
+            parameters: [
+                "invite_id": invitation.id,
+            ]).responseJSON {
+                response in
+                guard let object = response.result.value else {
+                    NSLog("failed to get JSON from server...")
+                    return
+                }
+                
+                let json = JSON(object)
+                
+                print(json)
+//                if let completion = completionOrNil {
+//                    let room = Room.fromJSON(json)
+//                    completion(room)
+//                }
+        }
+    }
+
     static let shard = RoomManager()
 }
 
