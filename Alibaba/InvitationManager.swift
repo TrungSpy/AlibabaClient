@@ -110,15 +110,15 @@ struct Invitation {
         ]
     
     static let categoryImageNames = [
-        "icon001",
-        "icon002",
-        "icon003",
-        "icon004",
-        "icon005",
-        "icon006",
-        "icon007",
-        "icon008",
-        "icon009"
+        "i001",
+        "i002",
+        "i003",
+        "i004",
+        "i005",
+        "i006",
+        "i007",
+        "i008",
+        "i009"
     ]
     
     static func imageForCategory(category: String) -> UIImage {
